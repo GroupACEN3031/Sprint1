@@ -4,6 +4,8 @@ In this assignment, we will continue to build upon our directory application by 
 
 This readme file contains a very detailed overview of the technologies and concepts we will be using for this project. I highly suggest reading through it throughly and as you start working on the project visiting many of the linked items to understand the concepts and technologies in more depth.
 
+Check check check
+
 ### FRONT-END DEVELOPMENT
 Front-end web development revolves around anything you create that the users of that specific app sees. To put it plainly, it is everything to do with the User Interface (UI) of the app.
 
