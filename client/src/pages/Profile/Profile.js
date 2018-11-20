@@ -1,14 +1,60 @@
 import React from "react";
-import { Col, Row, Container } from "../../components/Grid";
+import {Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
+import {Col,Row,Grid,Navbar,Nav,NavItem,NavDropdown,MenuItem} from "react-bootstrap";
 
 const Profile = () =>
   <Container fluid>
     <Row>
-      <Col size="md-12">
+      <Col size="md-10">
         <Jumbotron>
-          <h1>Welcome to the Profile Page!</h1>
+          <h1>Profile Page</h1>
         </Jumbotron>
+        <form>
+          <label>
+            First Name:
+            <input type="text" name="name" />
+          </label>
+        </form>
+        <form>
+        <label>
+            Last Name:
+            <input type="text" last="lastname" />
+          </label>
+        </form>
+        <form>
+        <label>
+            Email:
+            <input type="text" email="email" />
+          </label>
+        </form>
+        <form>
+        <label>
+            Password:
+            <input type="text" password="password" />
+          </label>
+        </form>
+        <form>
+        <label>
+            Re-enter Password:
+            <input type="text" last="password2" />
+          </label>
+        </form>
+        <form>
+        <label>
+            Upload Photo:
+            <input type="text" last="photo" />
+          </label>
+        </form>
+        <form>
+        <label>
+            Skills:
+            <input type="text" last="skills" />
+          </label>
+        </form>
+        <form>
+        <input type="submit" value="Submit" />
+        </form>
       </Col>
     </Row>
   </Container>;
