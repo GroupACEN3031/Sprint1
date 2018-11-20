@@ -2,6 +2,10 @@ import React from "react";
 import PropTypes from 'prop-types'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
+import Email from "./pages/Email";
+import Profile from "./pages/Profile";
+import SelectedProject from "./pages/SelectedProject";
+import TeamPortal from "./pages/TeamPortal";
 import NoMatch from "./pages/NoMatch";
 import DocumentTitle from "react-document-title";
 import {Col,Row,Grid,Navbar,Nav,NavItem,NavDropdown,MenuItem} from "react-bootstrap";
