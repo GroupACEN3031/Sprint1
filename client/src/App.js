@@ -44,12 +44,12 @@ class App extends React.PureComponent {
           <div>
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route component={NoMatch}/>
               <Route exact path='/Profile' component={Profile} />
               <Route exact path='/Email' component={Email} />
               <Route exact path='/SelectedProject' component={SelectedProject} />
               <Route exact path='/TeamPortal' component={TeamPortal} />
               <Route exact path='/UpdatePage' component={UpdatePage} />
+              <Route component={NoMatch}/>
             </Switch>
           </div>
         </Router>
