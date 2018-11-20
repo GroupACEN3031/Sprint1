@@ -7,9 +7,9 @@ const Profile = () =>
   <Container fluid>
     <Row>
       <Col size="md-10">
-        <Jumbotron>
-          <h1>Profile Page</h1>
-        </Jumbotron>
+        <h1>WebApps @ UF Student Team Portal</h1>
+        <h3>Profile Page</h3>
+        <h3></h3>
         <form>
           <label>
             First Name:

@@ -28,7 +28,7 @@ class App extends React.PureComponent {
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav>
-            <NavItem eventKey={1} href="/">
+            <NavItem eventKey={1} href="/SelectedProject">
               Projects
             </NavItem>
           </Nav>
