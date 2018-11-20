@@ -11,18 +11,6 @@ import NoMatch from "./pages/NoMatch";
 import DocumentTitle from "react-document-title";
 import {Col,Row,Grid,Navbar,Nav,NavItem,NavDropdown,MenuItem} from "react-bootstrap";
 
-<Router>
-<Switch>
-  <Route>
-    <Route exact path='/Profile' component={Profile} />
-    <Route exact path='/Email' component={Email} />
-    <Route exact path='/SelectedProject' component={SelectedProject} />
-    <Route exact path='/TeamPortal' component={TeamPortal} />
-    <Route exact path='/UpdatePage' component={UpdatePage} />
-  </Route>
-</Switch>
-</Router>
-
 class App extends React.PureComponent {
   render() {
     const user = {
@@ -57,6 +45,11 @@ class App extends React.PureComponent {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route component={NoMatch}/>
+              <Route exact path='/Profile' component={Profile} />
+              <Route exact path='/Email' component={Email} />
+              <Route exact path='/SelectedProject' component={SelectedProject} />
+              <Route exact path='/TeamPortal' component={TeamPortal} />
+              <Route exact path='/UpdatePage' component={UpdatePage} />
             </Switch>
           </div>
         </Router>
