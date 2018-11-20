@@ -6,7 +6,7 @@ import Email from "./pages/Email";
 import Profile from "./pages/Profile";
 import SelectedProject from "./pages/SelectedProject";
 import TeamPortal from "./pages/TeamPortal";
-import Update from "./pages/Update";
+import UpdatePage from "./pages/Update";
 import NoMatch from "./pages/NoMatch";
 import DocumentTitle from "react-document-title";
 import {Col,Row,Grid,Navbar,Nav,NavItem,NavDropdown,MenuItem} from "react-bootstrap";
