@@ -9,7 +9,7 @@ import TeamPortal from "./pages/TeamPortal";
 import UpdatePage from "./pages/Update";
 import NoMatch from "./pages/NoMatch";
 import DocumentTitle from "react-document-title";
-import {Col,Row,Grid,Navbar,Nav,NavItem,NavDropdown,MenuItem} from "react-bootstrap";
+import {Col,Row,Grid,Navbar,Nav,NavItem,NavDropdown,MenuItem,FormControl,Button} from "react-bootstrap";
 
 class App extends React.PureComponent {
   render() {
@@ -28,13 +28,16 @@ class App extends React.PureComponent {
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav>
-            <NavItem eventKey={1} href="/">
+            <NavItem eventKey={1} href="/SelectedProject">
               Projects
             </NavItem>
           </Nav>
           <Nav pullRight>
             <NavDropdown eventKey={2} title={"Welcome, " + user.username} id="basic-nav-dropdown">
-              <MenuItem eventKey={2.1} href="/Profile">Edit Profile</MenuItem>
+              <FormControl type="username" placeholder="Username" />
+              <FormControl type="password" placeholder="Password" />
+              <Button type="submit" href="/TeamPortal">Submit</Button>
+              <MenuItem eventKey={2.1} href="/Profile">Create Profile</MenuItem>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
