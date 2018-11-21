@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "6b2c5006-2d0f-448a-9467-4303a6082577",
+		"name": "Project CEN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Projects",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:90/api/projects/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "90",
+					"path": [
+						"api",
+						"projects",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Project",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t  \"name\": \"Project3\", \n      \"description\": \"Project 4 Example\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:90/api/projects",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "90",
+					"path": [
+						"api",
+						"projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Project",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t  \"id\": \"5bf395cf1e53214ea0b80616\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:90/api/projects",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "90",
+					"path": [
+						"api",
+						"projects"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "e05a1295-9cea-45f6-8bc1-b37bd46df3e5",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "a2fcbffa-f684-43ba-9fea-b847eacf30f4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
