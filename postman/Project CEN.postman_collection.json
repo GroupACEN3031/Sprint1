@@ -238,6 +238,150 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "Teams",
+			"item": [
+				{
+					"name": "Get Teams",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:90/api/teams/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"teams",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Team",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t  \"name\": \"Team A\", \n      \"skills\" : \"javascript,java,html,nodejs\",\n      \"members\" : \"member1,member2,member3\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:90/api/teams/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"teams",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Team",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t  \"name\": \"Team A\", \n      \"skills\" : \"javascript,java,html,nodejs\",\n      \"members\" : \"member1,member2,member3,member4\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:90/api/teams/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"teams",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Team",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": \"5bfe2af4f5e6bb00906513cf\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:90/api/teams/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"teams",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "91a5b318-3bc2-4f02-bd52-77a997452aa0",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "fe051ed9-1c93-4417-8f9f-73943e4159af",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
 		}
 	],
 	"event": [

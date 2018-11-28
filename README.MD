@@ -58,8 +58,9 @@
 
 Unique key : email
 
-1. Create 
-      URL : PUT http://localhost:90/api/users
+####Create 
+
+- URL : PUT http://localhost:90/api/users
       
       Example Request : 
         
@@ -72,43 +73,102 @@ Unique key : email
               "skills" : "javascript,java,html,nodejs"
         }
 
-2. List 
-  
-     URL : GET http://localhost:90/api/users
+####List  
+-   URL : GET http://localhost:90/api/users
     
-    Example Response : 
-        
-       [
-           {
-               "_id": "5bfe26b1b509011b709f6501",
-               "firstName": "Peter",
-               "lastName": "helloWorld",
-               "email": "peter@hotmail.com",
-               "password": "EdTdw1fggilo2/0ia24cKqwBjQdqVNpPZeHcgYBoSsM=",
-               "photo": "https://i.imgur.com/rzPz4qG.jpg",
-               "skills": "javascript,java,html,go",
-               "__v": 0
-           }
-       ]
+   Example Response : 
+            
+           [
+               {
+                   "_id": "5bfe26b1b509011b709f6501",
+                   "firstName": "Peter",
+                   "lastName": "helloWorld",
+                   "email": "peter@hotmail.com",
+                   "password": "EdTdw1fggilo2/0ia24cKqwBjQdqVNpPZeHcgYBoSsM=",
+                   "photo": "https://i.imgur.com/rzPz4qG.jpg",
+                   "skills": "javascript,java,html,go",
+                   "__v": 0
+               }
+           ]
 
-4. Update 
-  URL : POST http://localhost:90/api/users
-  Example : 
-        
-        {
-        	
-              "firstName": "Peter", 
-              "lastName": "Parker",
-              "email" : "peter@hotmail.com",
-              "password" : "helloWorld",
-              "photo" : "https://i.imgur.com/rzPz4qG.jpg",
-              "skills" : "javascript,java,html,go"
-        }
+####Update  
+  
+-   URL : POST http://localhost:90/api/users
+     
+      Example : 
+            
+            {
+                
+                  "firstName": "Peter", 
+                  "lastName": "Parker",
+                  "email" : "peter@hotmail.com",
+                  "password" : "helloWorld",
+                  "photo" : "https://i.imgur.com/rzPz4qG.jpg",
+                  "skills" : "javascript,java,html,go"
+            }
 
 
    
 3. Delete 
   URL : DELETE http://localhost:90/api/users
+  Example : 
+        
+        {
+        	
+        	  "id": "5bfe26b1b509011b709f6501" // This is automatically assigned when the project is created
+        }
+
+
+# Teams
+
+Unique key : name
+
+####Create 
+
+- URL : PUT http://localhost:90/api/teams
+      
+      Example Request : 
+        
+        {
+        	  "name": "Team A", 
+              "skills" : "javascript,java,html,nodejs",
+              "members" : "member1,member2,member3"
+        }
+
+####List
+  
+-   URL : GET http://localhost:90/api/teams
+    
+    Example Response : 
+        
+        [
+           {
+               "_id": "5bfe2be542c48127fc5d5e6f",
+               "name": "Team A",
+               "skills": "javascript,java,html,nodejs",
+               "members": "member1,member2,member3",
+               "__v": 0
+           }
+       ]
+
+
+####Update
+
+-   URL : POST http://localhost:90/api/teams
+  
+  Example : 
+        
+        {
+        	  "name": "Team A", 
+              "skills" : "javascript,java,html,nodejs",
+              "members" : "member1,member2,member3,member4"
+        }
+
+
+####Delete 
+ 
+- URL : DELETE http://localhost:90/api/teams
+ 
   Example : 
         
         {
