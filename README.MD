@@ -5,6 +5,8 @@
 
 # REST endpoints : 
 
+# Projects
+
 1. Create project
       URL : POST http://localhost:90/api/projects
       
@@ -49,4 +51,67 @@
         {
         	
         	  "id": "5bf395cf1e53214ea0b80616" // This is automatically assigned when the project is created
+        }
+
+
+# Users
+
+Unique key : email
+
+1. Create 
+      URL : PUT http://localhost:90/api/users
+      
+      Example Request : 
+        
+        {
+           	"firstName": "Peter", 
+              "lastName": "Parker",
+              "email" : "peter@hotmail.com",
+              "password" : "hello123",
+              "photo" : "https://i.imgur.com/rzPz4qG.jpg",
+              "skills" : "javascript,java,html,nodejs"
+        }
+
+2. List 
+  
+     URL : GET http://localhost:90/api/users
+    
+    Example Response : 
+        
+       [
+           {
+               "_id": "5bfe26b1b509011b709f6501",
+               "firstName": "Peter",
+               "lastName": "helloWorld",
+               "email": "peter@hotmail.com",
+               "password": "EdTdw1fggilo2/0ia24cKqwBjQdqVNpPZeHcgYBoSsM=",
+               "photo": "https://i.imgur.com/rzPz4qG.jpg",
+               "skills": "javascript,java,html,go",
+               "__v": 0
+           }
+       ]
+
+4. Update 
+  URL : POST http://localhost:90/api/users
+  Example : 
+        
+        {
+        	
+              "firstName": "Peter", 
+              "lastName": "Parker",
+              "email" : "peter@hotmail.com",
+              "password" : "helloWorld",
+              "photo" : "https://i.imgur.com/rzPz4qG.jpg",
+              "skills" : "javascript,java,html,go"
+        }
+
+
+   
+3. Delete 
+  URL : DELETE http://localhost:90/api/users
+  Example : 
+        
+        {
+        	
+        	  "id": "5bfe26b1b509011b709f6501" // This is automatically assigned when the project is created
         }
