@@ -1,3 +1,4 @@
+
 1. npm run installDeps
 2. npm start
     - It should open the browser at http://localhost:3000/ with the initial Application
@@ -8,9 +9,11 @@
 # Projects
 
 ## Create
-      URL : POST http://localhost:90/api/projects
-      
-      Example Request : 
+   URL : 
+
+-	POST http://localhost:90/api/projects
+   
+   Example Request : 
         
         {
         "name": "Project3", 
@@ -19,9 +22,10 @@
 
 ## List
   
-URL : GET http://localhost:90/api/projects
+URL : 
+-	GET http://localhost:90/api/projects
     
-    Example Response : 
+Example Response : 
         
        [
            {
@@ -46,9 +50,10 @@ URL : GET http://localhost:90/api/projects
 
 ## Get Project by ID
   
-URL : GET http://localhost:90/api/projects/{id}
+URL : 
+-	GET http://localhost:90/api/projects/{id}
     
-    Example Response : 
+Example Response : 
         
        {
            "_id": "5bf3959b1e53214ea0b80613",
@@ -60,9 +65,10 @@ URL : GET http://localhost:90/api/projects/{id}
 
 ## Delete project
  
- URL : DELETE http://localhost:90/api/projects
+ URL : 
+  - DELETE http://localhost:90/api/projects
  
-  Example : 
+  Example Request : 
         
         {
         	
@@ -72,13 +78,14 @@ URL : GET http://localhost:90/api/projects/{id}
 
 # Users
 
-Unique key : email
+Unique identifier: email
 
 ## Create 
 
-- URL : PUT http://localhost:90/api/users
+- URL : 
+	- PUT http://localhost:90/api/users
       
-      Example Request : 
+Example Request : 
         
         {
            	"firstName": "Peter", 
@@ -90,7 +97,8 @@ Unique key : email
         }
 
 ## List  
--   URL : GET http://localhost:90/api/users
+-   URL : 
+	 - GET http://localhost:90/api/users
     
    Example Response : 
             
@@ -110,7 +118,8 @@ Unique key : email
 
 Get User by ID
   
-URL : GET http://localhost:90/api/users/{id}
+-   URL : 
+	 - GET http://localhost:90/api/users/{id}
     
     Example Response : 
         
@@ -129,7 +138,8 @@ URL : GET http://localhost:90/api/users/{id}
 
 ## Update  
   
--   URL : POST http://localhost:90/api/users
+-   URL : 
+	 - POST http://localhost:90/api/users
      
       Example : 
             
@@ -148,7 +158,9 @@ URL : GET http://localhost:90/api/users/{id}
    
 ## Delete
  
-  URL : DELETE http://localhost:90/api/users
+  -   URL : 
+		 - DELETE http://localhost:90/api/users/{id}
+  
   Example : 
         
         {
@@ -163,7 +175,8 @@ Unique key : name
 
 ## Create 
 
-- URL : PUT http://localhost:90/api/teams
+-   URL : 
+	 - PUT http://localhost:90/api/users/{id}
       
       Example Request : 
         
@@ -175,7 +188,9 @@ Unique key : name
 
 ## List
   
--   URL : GET http://localhost:90/api/teams
+-   URL : 
+	- GET http://localhost:90/api/teams
+    
     
     Example Response : 
         
@@ -192,7 +207,8 @@ Unique key : name
 
 ## Get Team by ID
   
-URL : GET http://localhost:90/api/teams/{id}
+   URL : 
+	- GET http://localhost:90/api/teams/{id}
     
     Example Response : 
         
@@ -206,7 +222,8 @@ URL : GET http://localhost:90/api/teams/{id}
 
 ## Update
 
--   URL : POST http://localhost:90/api/teams
+   URL : 
+	- POST http://localhost:90/api/teams/
   
   Example : 
         
@@ -219,7 +236,8 @@ URL : GET http://localhost:90/api/teams/{id}
 
 ## Delete 
  
-- URL : DELETE http://localhost:90/api/teams
+ URL : 
+	- DELETE http://localhost:90/api/teams/
  
   Example : 
         
@@ -227,13 +245,15 @@ URL : GET http://localhost:90/api/teams/{id}
         	
         	  "id": "5bfe26b1b509011b709f6501" // This is automatically assigned when the project is created
         }
+
 # Bids
 
 Any team member can Bid but only one bid is accepted per Team. Teams should coordinate to make their selection and then any team member can send the vote. 
 
 ## List
   
--   URL : GET http://localhost:90/api/bids
+ URL : 
+	- GET http://localhost:90/api/bids/
     
     Example Response : 
         
@@ -248,7 +268,8 @@ Any team member can Bid but only one bid is accepted per Team. Teams should coor
 
 
 ## Get Bid by ID
-URL : GET http://localhost:90/api/bids/{id}
+ URL : 
+	- GET http://localhost:90/api/bids/{id}
     
     Example Response : 
         
@@ -261,20 +282,21 @@ URL : GET http://localhost:90/api/bids/{id}
 
 
 ## Create
-  
--   URL : PUT http://localhost:90/api/bids
+  URL : 
+- PUT http://localhost:90/api/bids
     
     Example Request : 
         
         {
-        	  "projectID": "5bf395c91e53214ea0b80615", 
+        	"projectID": "5bf395c91e53214ea0b80615", 
               "teamID" : "5bfe2be542c48127fc5d5e6f"
         }
 
 
 ## Delete 
  
-- URL : DELETE http://localhost:90/api/bids
+  URL : 
+- DELETE http://localhost:90/api/bids
  
   Example Request : 
         
