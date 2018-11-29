@@ -177,7 +177,7 @@ Unique key : name
         }
 # Bids
 
-Any team member can Bid but only once bid is accepted per Team. Teams should coordinate to make their selection and then any team member can send the vote. 
+Any team member can Bid but only one bid is accepted per Team. Teams should coordinate to make their selection and then any team member can send the vote. 
 
 ####List
   
