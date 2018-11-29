@@ -121,19 +121,19 @@ Get User by ID
 -   URL : 
 	 - GET http://localhost:90/api/users/{id}
     
-    Example Response : 
-        
-       {
-           "_id": "5bfe26b1b509011b709f6501",
-           "firstName": "Peter",
-           "lastName": "helloWorld",
-           "email": "peter@hotmail.com",
-           "password": "EdTdw1fggilo2/0ia24cKqwBjQdqVNpPZeHcgYBoSsM=",
-           "photo": "https://i.imgur.com/rzPz4qG.jpg",
-           "skills": "javascript,java,html,go",
-           "__v": 0,
-           "teamID": "5bfe2be542c48127fc5d5e6f"
-       }
+	    Example Response : 
+
+	       {
+		   "_id": "5bfe26b1b509011b709f6501",
+		   "firstName": "Peter",
+		   "lastName": "helloWorld",
+		   "email": "peter@hotmail.com",
+		   "password": "EdTdw1fggilo2/0ia24cKqwBjQdqVNpPZeHcgYBoSsM=",
+		   "photo": "https://i.imgur.com/rzPz4qG.jpg",
+		   "skills": "javascript,java,html,go",
+		   "__v": 0,
+		   "teamID": "5bfe2be542c48127fc5d5e6f"
+	       }
 
 
 ## Update  
