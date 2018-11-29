@@ -5,6 +5,8 @@
 
 # REST endpoints : 
 
+# Projects
+
 1. Create project
       URL : POST http://localhost:90/api/projects
       
@@ -49,4 +51,127 @@
         {
         	
         	  "id": "5bf395cf1e53214ea0b80616" // This is automatically assigned when the project is created
+        }
+
+
+# Users
+
+Unique key : email
+
+####Create 
+
+- URL : PUT http://localhost:90/api/users
+      
+      Example Request : 
+        
+        {
+           	"firstName": "Peter", 
+              "lastName": "Parker",
+              "email" : "peter@hotmail.com",
+              "password" : "hello123",
+              "photo" : "https://i.imgur.com/rzPz4qG.jpg",
+              "skills" : "javascript,java,html,nodejs"
+        }
+
+####List  
+-   URL : GET http://localhost:90/api/users
+    
+   Example Response : 
+            
+           [
+               {
+                   "_id": "5bfe26b1b509011b709f6501",
+                   "firstName": "Peter",
+                   "lastName": "helloWorld",
+                   "email": "peter@hotmail.com",
+                   "password": "EdTdw1fggilo2/0ia24cKqwBjQdqVNpPZeHcgYBoSsM=",
+                   "photo": "https://i.imgur.com/rzPz4qG.jpg",
+                   "skills": "javascript,java,html,go",
+                   "__v": 0
+               }
+           ]
+
+####Update  
+  
+-   URL : POST http://localhost:90/api/users
+     
+      Example : 
+            
+            {
+                
+                  "firstName": "Peter", 
+                  "lastName": "Parker",
+                  "email" : "peter@hotmail.com",
+                  "password" : "helloWorld",
+                  "photo" : "https://i.imgur.com/rzPz4qG.jpg",
+                  "skills" : "javascript,java,html,go"
+            }
+
+
+   
+3. Delete 
+  URL : DELETE http://localhost:90/api/users
+  Example : 
+        
+        {
+        	
+        	  "id": "5bfe26b1b509011b709f6501" // This is automatically assigned when the project is created
+        }
+
+
+# Teams
+
+Unique key : name
+
+####Create 
+
+- URL : PUT http://localhost:90/api/teams
+      
+      Example Request : 
+        
+        {
+        	  "name": "Team A", 
+              "skills" : "javascript,java,html,nodejs",
+              "members" : "member1,member2,member3"
+        }
+
+####List
+  
+-   URL : GET http://localhost:90/api/teams
+    
+    Example Response : 
+        
+        [
+           {
+               "_id": "5bfe2be542c48127fc5d5e6f",
+               "name": "Team A",
+               "skills": "javascript,java,html,nodejs",
+               "members": "member1,member2,member3",
+               "__v": 0
+           }
+       ]
+
+
+####Update
+
+-   URL : POST http://localhost:90/api/teams
+  
+  Example : 
+        
+        {
+        	  "name": "Team A", 
+              "skills" : "javascript,java,html,nodejs",
+              "members" : "member1,member2,member3,member4"
+        }
+
+
+####Delete 
+ 
+- URL : DELETE http://localhost:90/api/teams
+ 
+  Example : 
+        
+        {
+        	
+        	  "id": "5bfe26b1b509011b709f6501" // This is automatically assigned when the project is created
         }
