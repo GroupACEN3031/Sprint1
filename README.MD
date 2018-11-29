@@ -304,3 +304,127 @@ Any team member can Bid but only one bid is accepted per Team. Teams should coor
         	
         	  "id": "5bfe26b1b509011b709f6501" 
         }
+
+
+# Features
+
+There are a set of features for every project.
+
+## List
+  
+ URL : 
+- GET http://localhost:90/api/features/
+    
+    Example Response : 
+        
+        [
+            {
+                "_id": "5bff73b20abd600c943b2f2e",
+                "projectID": "5bf3959b1e53214ea0b80613",
+                "description": "Users should be able to add users",
+                "title": "Add user",
+                "status": "open",
+                "__v": 0
+            },
+            {
+                "_id": "5bff74320abd600c943b2f34",
+                "projectID": "5bf3959b1e53214ea0b80613",
+                "description": "Users should be able to add users",
+                "title": "Add Accounts",
+                "status": "open",
+                "__v": 0
+            },
+            {
+                "_id": "5bff74440abd600c943b2f35",
+                "projectID": "5bff6dbb3342ce29601cc093",
+                "description": "Users should be able to add users",
+                "title": "Add Accounts",
+                "status": "open",
+                "__v": 0
+            },
+            {
+                "_id": "5bff750500f606340486aedf",
+                "projectID": "5bff6dbb3342ce29601cc093",
+                "description": "Users should be able to add users",
+                "title": "Hello World",
+                "status": "open",
+                "__v": 0
+            }
+        ]
+
+
+## Get Feature by ID
+ 
+ URL : 
+	- GET http://localhost:90/api/features/{id}
+    
+    Example Response : 
+        
+      {
+          "_id": "5bff73b20abd600c943b2f2e",
+          "projectID": "5bf3959b1e53214ea0b80613",
+          "description": "Users should be able to add users",
+          "title": "Add user",
+          "status": "open",
+          "__v": 0
+      }
+
+## Get Features by Project ID
+ 
+ List all the features for a specific project.
+ 
+ URL : 
+	- GET http://localhost:90/api/features/project/{id}
+    
+    Example Response : 
+        
+      {
+          "_id": "5bff73b20abd600c943b2f2e",
+          "projectID": "5bf3959b1e53214ea0b80613",
+          "description": "Users should be able to add users",
+          "title": "Add user",
+          "status": "open",
+          "__v": 0
+      }
+
+
+## Create
+  URL : 
+- PUT http://localhost:90/api/features
+    
+    Example Request : 
+        
+        {
+        	  "projectID": "5bff6dbb3342ce29601cc093", 
+        	  "description" : "Users should be able to add users",
+        	  "title" : "Hello World",
+        	  "status" : "open"
+        }
+
+
+
+## Update
+  URL : 
+- POST http://localhost:90/api/features
+    
+    Example Request : 
+        
+        {
+        	  "projectID": "5bff6dbb3342ce29601cc093", 
+        	  "description" : "Users should be able to add users",
+        	  "title" : "Hello World",
+        	  "status" : "closed",
+        	  "id" : "5bff73c90abd600c943b2f30"
+        }
+
+## Delete 
+ 
+  URL : 
+- DELETE http://localhost:90/api/features
+ 
+  Example Request : 
+        
+        {
+        	
+        	  "id": "5bfe26b1b509011b709f6501" 
+        }
