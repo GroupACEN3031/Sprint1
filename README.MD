@@ -11,7 +11,7 @@
 ## Create
    URL : 
 
--	POST http://localhost:90/api/projects
+-	PUT http://localhost:90/api/projects
    
    Example Request : 
         

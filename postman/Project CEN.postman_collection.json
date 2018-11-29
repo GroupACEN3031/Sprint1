@@ -34,9 +34,34 @@
 					"response": []
 				},
 				{
+					"name": "Get Project By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:90/api/projects/5bf3959b1e53214ea0b80613",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"projects",
+								"5bf3959b1e53214ea0b80613"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Create Project",
 					"request": {
-						"method": "POST",
+						"method": "PUT",
 						"header": [
 							{
 								"key": "Content-Type",
@@ -118,6 +143,31 @@
 								"api",
 								"users",
 								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:90/api/users/5bfe26b1b509011b709f6501",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"users",
+								"5bfe26b1b509011b709f6501"
 							]
 						}
 					},
@@ -268,6 +318,31 @@
 					"response": []
 				},
 				{
+					"name": "Get Team By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:90/api/teams/5bff676f700139209c52e93e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"teams",
+								"5bff676f700139209c52e93e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Create Team",
 					"request": {
 						"method": "PUT",
@@ -279,7 +354,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t  \"name\": \"Team A\", \n      \"skills\" : \"javascript,java,html,nodejs\",\n      \"members\" : \"member1,member2,member3\"\n}"
+							"raw": "{\n\t  \"name\": \"Team B\", \n      \"skills\" : \"javascript,java,html,nodejs\",\n      \"members\" : \"member1,member2,member3\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:90/api/teams/",
@@ -341,10 +416,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id\": \"5bfe2b8042c48127fc5d5e6c\"\n}"
+							"raw": "{\n\t\"id\": \"5bfe2be542c48127fc5d5e6f\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:90/api/teams/",
+							"raw": "http://localhost:90/api/teams",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -352,8 +427,7 @@
 							"port": "90",
 							"path": [
 								"api",
-								"teams",
-								""
+								"teams"
 							]
 						}
 					},
@@ -406,6 +480,31 @@
 								"api",
 								"bids",
 								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Bid By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:90/api/bids/5bff51fdbcec4035144372be",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"bids",
+								"5bff51fdbcec4035144372be"
 							]
 						}
 					},
