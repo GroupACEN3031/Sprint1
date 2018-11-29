@@ -165,7 +165,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t  \"firstName\": \"Peter\", \n      \"lastName\": \"Parker\",\n      \"email\" : \"peter@hotmail.com\",\n      \"password\" : \"helloWorld\",\n      \"photo\" : \"https://i.imgur.com/rzPz4qG.jpg\",\n      \"skills\" : \"javascript,java,html,go\"\n}"
+							"raw": "{\n\t  \"firstName\": \"Peter\", \n      \"lastName\": \"Parker\",\n      \"email\" : \"peter@hotmail.com\",\n      \"password\" : \"helloWorld\",\n      \"photo\" : \"https://i.imgur.com/rzPz4qG.jpg\",\n      \"skills\" : \"javascript,java,html,go\",\n      \"teamID\" : \"5bfe2be542c48127fc5d5e6f\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:90/api/users/",
@@ -341,7 +341,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id\": \"5bfe2af4f5e6bb00906513cf\"\n}"
+							"raw": "{\n\t\"id\": \"5bfe2b8042c48127fc5d5e6c\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:90/api/teams/",
@@ -353,6 +353,120 @@
 							"path": [
 								"api",
 								"teams",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "91a5b318-3bc2-4f02-bd52-77a997452aa0",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "fe051ed9-1c93-4417-8f9f-73943e4159af",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Bids",
+			"item": [
+				{
+					"name": "Get Bids",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:90/api/bids/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"bids",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Bids",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t  \"projectID\": \"5bf395c91e53214ea0b80615\", \n      \"teamID\" : \"5bfe2be542c48127fc5d5e6f\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:90/api/bids/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"bids",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Bid",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t  \"id\": \"5bff5140bcec4035144372b9\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:90/api/bids/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"bids",
 								""
 							]
 						}

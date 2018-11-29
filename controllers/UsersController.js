@@ -1,5 +1,8 @@
 const User = require("../models").User;
 const crypto = require("crypto");
+const Team = require("../models").Team;
+const mongoose = require('mongoose');
+
 
 exports.list = (req, res) => {
     User.find()
@@ -48,12 +51,30 @@ exports.create = (req, res) => {
 };
 
 
+function updateUser(requestUser, newUser, res) {
+
+    User.findOneAndUpdate({'email': requestUser.email}, {$set: newUser}, {new: true}, (err, found) => {
+        if (err) throw(err);
+
+        if (!found) {
+            res.status(404).send("User does not exist");
+
+        } else {
+
+            res.status(200).send("User Updated");
+        }
+
+    });
+
+}
+
+
 exports.update = (req, res) => {
     const requestUser = new User(req.body);
 
     if (requestUser) {
 
-        const newUser = {
+        let newUser = {
             firstName: requestUser.firstName,
             lastName: requestUser.password,
             password: crypto.createHash('sha256').update(requestUser.password).digest('base64'),
@@ -61,20 +82,32 @@ exports.update = (req, res) => {
             skills: requestUser.skills
         };
 
-        console.log("User after update " + JSON.stringify(newUser));
+        if (requestUser.teamID) {
 
-        User.findOneAndUpdate({'email': requestUser.email}, {$set: newUser}, {new: true}, (err, found) => {
-            if (err) throw(err);
+            if (mongoose.Types.ObjectId.isValid(requestUser.teamID)) {
 
-            if (!found) {
-                res.status(404).send("User does not exist");
 
-            } else {
+                Team.findOne({'_id': requestUser.teamID}, (err, found) => {
+                    if (err) {
+                        console.log(err);
+                        res.status(400).send("Error");
+                    }
+                    if (found) {
+                        console.log("Team exists");
+                        newUser.teamID = requestUser.teamID;
+                        updateUser(requestUser, newUser, res);
+                    } else {
+                        res.status(404).send("Team does not exist");
+                    }
+                });
+            }else{
+                res.status(400).send("Invalid teamID");
 
-                res.status(200).send("User Updated");
             }
+        } else {
+            updateUser(requestUser, newUser, res);
+        }
 
-        });
     }
 };
 

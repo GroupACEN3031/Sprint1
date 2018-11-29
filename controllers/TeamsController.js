@@ -34,7 +34,7 @@ exports.create = (req, res) => {
                         console.log(err);
                         res.status(400).send("Error");
                     } else {
-                        console.log("User created");
+                        console.log("Team created");
                         res.json(team);
                     }
                 });

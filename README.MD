@@ -104,7 +104,8 @@ Unique key : email
                   "email" : "peter@hotmail.com",
                   "password" : "helloWorld",
                   "photo" : "https://i.imgur.com/rzPz4qG.jpg",
-                  "skills" : "javascript,java,html,go"
+                  "skills" : "javascript,java,html,go",
+                  "teamID": "5bfe2be542c48127fc5d5e6f"
             }
 
 

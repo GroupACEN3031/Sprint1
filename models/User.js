@@ -8,7 +8,8 @@ const User = new Schema({
     email: { type: String, required: true },
     password: { type: String, required: true },
     photo: { type: String, required: true },
-    skills: { type: String, required: true }
+    skills: { type: String, required: true },
+    teamID: { type: String, required: false }
 });
 
 
