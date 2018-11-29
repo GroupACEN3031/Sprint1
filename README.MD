@@ -50,7 +50,7 @@
         
         {
         	
-        	  "id": "5bf395cf1e53214ea0b80616" // This is automatically assigned when the project is created
+        	  "id": "5bf395cf1e53214ea0b80616" 
         }
 
 
@@ -115,7 +115,7 @@ Unique key : email
         
         {
         	
-        	  "id": "5bfe26b1b509011b709f6501" // This is automatically assigned when the project is created
+        	  "id": "5bfe26b1b509011b709f6501" 
         }
 
 
@@ -174,4 +174,46 @@ Unique key : name
         {
         	
         	  "id": "5bfe26b1b509011b709f6501" // This is automatically assigned when the project is created
+        }
+# Bids
+
+Any team member can Bid but only once bid is accepted per Team. Teams should coordinate to make their selection and then any team member can send the vote. 
+
+####List
+  
+-   URL : GET http://localhost:90/api/bids
+    
+    Example Response : 
+        
+        [
+            {
+                "_id": "5bff51fdbcec4035144372be",
+                "projectID": "5bf395c91e53214ea0b80615",
+                "teamID": "5bfe2be542c48127fc5d5e6f",
+                "__v": 0
+            }
+        ]
+
+
+####Create
+  
+-   URL : PUT http://localhost:90/api/bids
+    
+    Example Request : 
+        
+        {
+        	  "projectID": "5bf395c91e53214ea0b80615", 
+              "teamID" : "5bfe2be542c48127fc5d5e6f"
+        }
+
+
+####Delete 
+ 
+- URL : DELETE http://localhost:90/api/bids
+ 
+  Example Request : 
+        
+        {
+        	
+        	  "id": "5bfe26b1b509011b709f6501" 
         }
