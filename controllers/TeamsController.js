@@ -13,7 +13,6 @@ exports.list = (req, res) => {
         })
 };
 
-
 exports.create = (req, res) => {
     let team = new Team(req.body);
 
@@ -52,9 +51,9 @@ exports.update = (req, res) => {
     if (requestTeam) {
 
         const newTeam = {
-            name : requestTeam.name,
-            skills : requestTeam.skills,
-            members : requestTeam.members
+            name: requestTeam.name,
+            skills: requestTeam.skills,
+            members: requestTeam.members
         };
 
         console.log("Team after update " + JSON.stringify(newTeam));
@@ -90,3 +89,21 @@ exports.delete = (req, res) => {
 
 };
 
+
+exports.getById = (req, res) => {
+
+    const ID = req.params.id;
+    console.log("ID in the request " + ID);
+
+    Team.findOne({'_id': ID}, (err, found) => {
+        if (err) {
+            console.log(err);
+            res.status(400).send("Error");
+        }
+        if (found) {
+            res.status(200).send(found);
+        } else {
+            res.status(404).send("Team does not exist");
+        }
+    });
+};

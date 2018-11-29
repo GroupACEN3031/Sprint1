@@ -7,7 +7,7 @@
 
 # Projects
 
-1. Create project
+## Create
       URL : POST http://localhost:90/api/projects
       
       Example Request : 
@@ -17,9 +17,9 @@
         "description": "Project 4 Example"
         }
 
-2. List Projects
+## List
   
-     URL : GET http://localhost:90/api/projects
+URL : GET http://localhost:90/api/projects
     
     Example Response : 
         
@@ -43,9 +43,25 @@
                "__v": 0
            }
        ]
-   
-3. Delete project
-  URL : DELETE http://localhost:90/api/projects
+
+## Get Project by ID
+  
+URL : GET http://localhost:90/api/projects/{id}
+    
+    Example Response : 
+        
+       {
+           "_id": "5bf3959b1e53214ea0b80613",
+           "name": "Project1",
+           "description": "Project 1 Example",
+           "__v": 0
+       }
+
+
+## Delete project
+ 
+ URL : DELETE http://localhost:90/api/projects
+ 
   Example : 
         
         {
@@ -58,7 +74,7 @@
 
 Unique key : email
 
-####Create 
+## Create 
 
 - URL : PUT http://localhost:90/api/users
       
@@ -73,7 +89,7 @@ Unique key : email
               "skills" : "javascript,java,html,nodejs"
         }
 
-####List  
+## List  
 -   URL : GET http://localhost:90/api/users
     
    Example Response : 
@@ -91,7 +107,27 @@ Unique key : email
                }
            ]
 
-####Update  
+
+Get User by ID
+  
+URL : GET http://localhost:90/api/users/{id}
+    
+    Example Response : 
+        
+       {
+           "_id": "5bfe26b1b509011b709f6501",
+           "firstName": "Peter",
+           "lastName": "helloWorld",
+           "email": "peter@hotmail.com",
+           "password": "EdTdw1fggilo2/0ia24cKqwBjQdqVNpPZeHcgYBoSsM=",
+           "photo": "https://i.imgur.com/rzPz4qG.jpg",
+           "skills": "javascript,java,html,go",
+           "__v": 0,
+           "teamID": "5bfe2be542c48127fc5d5e6f"
+       }
+
+
+## Update  
   
 -   URL : POST http://localhost:90/api/users
      
@@ -110,7 +146,8 @@ Unique key : email
 
 
    
-3. Delete 
+## Delete
+ 
   URL : DELETE http://localhost:90/api/users
   Example : 
         
@@ -124,7 +161,7 @@ Unique key : email
 
 Unique key : name
 
-####Create 
+## Create 
 
 - URL : PUT http://localhost:90/api/teams
       
@@ -136,7 +173,7 @@ Unique key : name
               "members" : "member1,member2,member3"
         }
 
-####List
+## List
   
 -   URL : GET http://localhost:90/api/teams
     
@@ -153,7 +190,21 @@ Unique key : name
        ]
 
 
-####Update
+## Get Team by ID
+  
+URL : GET http://localhost:90/api/teams/{id}
+    
+    Example Response : 
+        
+       {
+           "_id": "5bff676f700139209c52e93e",
+           "name": "Team B",
+           "skills": "javascript,java,html,nodejs",
+           "members": "member1,member2,member3",
+           "__v": 0
+       }
+
+## Update
 
 -   URL : POST http://localhost:90/api/teams
   
@@ -166,7 +217,7 @@ Unique key : name
         }
 
 
-####Delete 
+## Delete 
  
 - URL : DELETE http://localhost:90/api/teams
  
@@ -180,7 +231,7 @@ Unique key : name
 
 Any team member can Bid but only one bid is accepted per Team. Teams should coordinate to make their selection and then any team member can send the vote. 
 
-####List
+## List
   
 -   URL : GET http://localhost:90/api/bids
     
@@ -196,7 +247,20 @@ Any team member can Bid but only one bid is accepted per Team. Teams should coor
         ]
 
 
-####Create
+## Get Bid by ID
+URL : GET http://localhost:90/api/bids/{id}
+    
+    Example Response : 
+        
+       {
+           "_id": "5bff51fdbcec4035144372be",
+           "projectID": "5bf395c91e53214ea0b80615",
+           "teamID": "5bfe2be542c48127fc5d5e6f",
+           "__v": 0
+       }
+
+
+## Create
   
 -   URL : PUT http://localhost:90/api/bids
     
@@ -208,7 +272,7 @@ Any team member can Bid but only one bid is accepted per Team. Teams should coor
         }
 
 
-####Delete 
+## Delete 
  
 - URL : DELETE http://localhost:90/api/bids
  

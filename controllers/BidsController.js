@@ -95,3 +95,21 @@ exports.delete = (req, res) => {
 
 };
 
+
+exports.getById = (req, res) => {
+
+    const ID = req.params.id;
+    console.log("ID in the request " + ID);
+
+    Bid.findOne({'_id': ID}, (err, found) => {
+        if (err) {
+            console.log(err);
+            res.status(400).send("Error");
+        }
+        if (found) {
+            res.status(200).send(found);
+        } else {
+            res.status(404).send("Project does not exist");
+        }
+    });
+};

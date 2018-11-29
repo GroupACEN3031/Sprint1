@@ -4,7 +4,10 @@ const BidsController = require("../../controllers/BidsController");
 router.route("/")
     .get(BidsController.list)
     .put(BidsController.create)
-    .delete(BidsController.delete)
-;
+    .delete(BidsController.delete);
+
+router.route('/:id')
+    .get(BidsController.getById);
+
 
 module.exports = router;

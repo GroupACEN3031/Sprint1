@@ -6,4 +6,8 @@ router.route("/")
   .post(ProjectsController.create)
   .delete(ProjectsController.delete);
 
+
+router.route('/:id')
+    .get(ProjectsController.getById);
+
 module.exports = router;
