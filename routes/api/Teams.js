@@ -7,4 +7,8 @@ router.route("/")
     .delete(TeamsController.delete)
     .post(TeamsController.update);
 
+
+router.route('/:id')
+    .get(TeamsController.getById);
+
 module.exports = router;
