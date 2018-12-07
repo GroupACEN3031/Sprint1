@@ -6,89 +6,790 @@
 	},
 	"item": [
 		{
-			"name": "Get Projects",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
+			"name": "Projects",
+			"item": [
+				{
+					"name": "Get Projects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:90/api/projects/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"projects",
+								""
+							]
+						}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:90/api/projects/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "90",
-					"path": [
-						"api",
-						"projects",
-						""
-					]
+				{
+					"name": "Get Project By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:90/api/projects/5bf3959b1e53214ea0b80613",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"projects",
+								"5bf3959b1e53214ea0b80613"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Project",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t  \"name\": \"Project3\", \n      \"description\": \"Project Example\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:90/api/projects",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Project",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": \"5bfe16841b185a2d80fef5ba\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:90/api/projects",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"projects"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Create Project",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t  \"name\": \"Project3\", \n      \"description\": \"Project 4 Example\"\n}"
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:90/api/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:90/api/projects",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "90",
-					"path": [
-						"api",
-						"projects"
-					]
+				{
+					"name": "Get User By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:90/api/users/5bfe26b1b509011b709f6501",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"users",
+								"5bfe26b1b509011b709f6501"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t  \"firstName\": \"Peter\", \n      \"lastName\": \"Parker\",\n      \"email\" : \"peter@hotmail.com\",\n      \"password\" : \"hello123\",\n      \"photo\" : \"https://i.imgur.com/rzPz4qG.jpg\",\n      \"skills\" : \"javascript,java,html,nodejs\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:90/api/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t  \"firstName\": \"Peter\", \n      \"lastName\": \"Parker\",\n      \"email\" : \"peter@hotmail.com\",\n      \"password\" : \"helloWorld\",\n      \"photo\" : \"https://i.imgur.com/rzPz4qG.jpg\",\n      \"skills\" : \"javascript,java,html,go\",\n      \"teamID\" : \"5bfe2be542c48127fc5d5e6f\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:90/api/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": \"5bfe26128f174444584d1fd6\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:90/api/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "91a5b318-3bc2-4f02-bd52-77a997452aa0",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "fe051ed9-1c93-4417-8f9f-73943e4159af",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
 		},
 		{
-			"name": "Delete Project",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\n\t  \"id\": \"5bf395cf1e53214ea0b80616\"\n}"
+			"name": "Teams",
+			"item": [
+				{
+					"name": "Get Teams",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:90/api/teams/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"teams",
+								""
+							]
+						}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:90/api/projects",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "90",
-					"path": [
-						"api",
-						"projects"
-					]
+				{
+					"name": "Get Team By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:90/api/teams/5bff676f700139209c52e93e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"teams",
+								"5bff676f700139209c52e93e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Team",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t  \"name\": \"Team B\", \n      \"skills\" : \"javascript,java,html,nodejs\",\n      \"members\" : \"member1,member2,member3\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:90/api/teams/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"teams",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Team",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t  \"name\": \"Team A\", \n      \"skills\" : \"javascript,java,html,nodejs\",\n      \"members\" : \"member1,member2,member3,member4\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:90/api/teams/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"teams",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Team",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": \"5bfe2be542c48127fc5d5e6f\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:90/api/teams",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"teams"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "91a5b318-3bc2-4f02-bd52-77a997452aa0",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "fe051ed9-1c93-4417-8f9f-73943e4159af",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Bids",
+			"item": [
+				{
+					"name": "Get Bids",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:90/api/bids/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"bids",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Bid By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:90/api/bids/5bff51fdbcec4035144372be",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"bids",
+								"5bff51fdbcec4035144372be"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Bids",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t  \"projectID\": \"5bf395c91e53214ea0b80615\", \n      \"teamID\" : \"5bfe2be542c48127fc5d5e6f\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:90/api/bids/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"bids",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Bid",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t  \"id\": \"5bff5140bcec4035144372b9\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:90/api/bids/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"bids",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "91a5b318-3bc2-4f02-bd52-77a997452aa0",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "fe051ed9-1c93-4417-8f9f-73943e4159af",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Features",
+			"item": [
+				{
+					"name": "Get Features",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:90/api/features/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"features",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Feature by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:90/api/features/5bff73c90abd600c943b2f30",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"features",
+								"5bff73c90abd600c943b2f30"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Features by Project ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:90/api/features/project/5bf3959b1e53214ea0b80613",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"features",
+								"project",
+								"5bf3959b1e53214ea0b80613"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Feature",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t  \"projectID\": \"5bff6dbb3342ce29601cc093\", \n\t  \"description\" : \"Users should be able to add users\",\n\t  \"title\" : \"Hello World\",\n\t  \"status\" : \"open\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:90/api/features/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"features",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Feature",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t  \"projectID\": \"5bff6dbb3342ce29601cc093\", \n\t  \"description\" : \"Users should be able to add users\",\n\t  \"title\" : \"Hello World\",\n\t  \"status\" : \"closed\",\n\t  \"id\" : \"5bff73c90abd600c943b2f30\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:90/api/features/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"features",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Feature",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t  \"id\": \"5bf3959b1e53214ea0b80613\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:90/api/features/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"features",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "91a5b318-3bc2-4f02-bd52-77a997452aa0",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "fe051ed9-1c93-4417-8f9f-73943e4159af",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
 		}
 	],
 	"event": [

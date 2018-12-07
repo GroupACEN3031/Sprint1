@@ -1,3 +1,7 @@
 module.exports = {
-  Project: require("./Project")
+  Project: require("./Project"),
+  User: require("./User"),
+  Team: require("./Team"),
+  Bid: require("./Bid"),
+  Feature: require("./Feature")
 };
