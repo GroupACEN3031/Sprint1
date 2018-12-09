@@ -1,7 +1,6 @@
 import React from "react";
 import {Container } from "../../components/Grid";
-import Jumbotron from "../../components/Jumbotron";
-import {Col,Row,Grid,Navbar,Nav,NavItem,NavDropdown,MenuItem} from "react-bootstrap";
+import {Col,Row} from "react-bootstrap";
 
 const Profile = () =>
   <Container fluid>
@@ -9,7 +8,6 @@ const Profile = () =>
       <Col size="md-10">
         <h1>WebApps @ UF Student Team Portal</h1>
         <h3>Profile Page</h3>
-        <h3></h3>
         <form>
           <label>
             First Name:

@@ -1,44 +1,35 @@
-import React, { Component } from "react"
-import {PageHeader,Panel,Glyphicon,Button} from "react-bootstrap"
-import axios from 'axios'
+import React from "react"
+import {
+    Col,
+    Row,
+    PageHeader,
+    Grid
+} from "react-bootstrap"
+import "../../style.css"
 
-export default class Home extends Component {
-  state = {
-    projects: []
-  }
+const Home = () =>
+  <div>
+    <PageHeader>Welcome to the UF Student Team Portal</PageHeader>
+    <h3 className="text-muted">What would you like to do?</h3>
+    <Grid>
+      <Row>
+        <Col xs={6} md={4}>
+          <a href="/ProjectList">
+            <div className="projects-nav">See available projects</div>
+          </a>
+        </Col>
+        <Col xs={6} md={4}>
+          <a href="TeamPortal">
+            <div className="teamprofile-nav">Edit my teams profile</div>
+          </a>
+        </Col>
+        <Col xs={6} md={4}>
+          <a href="Profile">
+            <div className="selfprofile-nav">Edit my profile</div>
+          </a>
+        </Col>
+      </Row>
+    </Grid>
+  </div>
 
-  componentDidMount() {
-    axios.get(`http://localhost:90/api/projects`)
-      .then(res => {
-        const projects = res.data;
-        this.setState({ projects });
-      })
-  }
-
-  render(){
-    const {projects} = this.state
-    return(
-      <div>
-        <PageHeader>Projects</PageHeader>
-          {projects.map((x, index) =>
-            <Panel key={index} id={"collapsible-panel-" + index}>
-              <Panel.Heading>
-                <Panel.Title toggle>
-                  <Glyphicon glyph="chevron-right" />{x.name}
-                </Panel.Title>
-              </Panel.Heading>
-              <Panel.Collapse>
-                <Panel.Body>
-                  <p><strong>Description:</strong></p>
-                  <p>{x.description}</p>
-                </Panel.Body>
-              </Panel.Collapse>
-            </Panel>
-          )}
-        <Button className="pull-right" bsStyle="primary" bsSize="large">
-            Submit Project Bidding
-        </Button>
-      </div>
-    )
-  }
-}
+export default Home

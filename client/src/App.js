@@ -1,15 +1,14 @@
 import React from "react";
-import PropTypes from 'prop-types'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Email from "./pages/Email";
 import Profile from "./pages/Profile";
+import ProjectList from "./pages/ProjectList/ProjectList";
 import SelectedProject from "./pages/SelectedProject";
 import TeamPortal from "./pages/TeamPortal";
 import UpdatePage from "./pages/Update";
 import NoMatch from "./pages/NoMatch";
-import DocumentTitle from "react-document-title";
-import {Col,Row,Grid,Navbar,Nav,NavItem,NavDropdown,MenuItem,FormControl,Button} from "react-bootstrap";
+import {Grid,Navbar,Nav,NavItem,NavDropdown,MenuItem,FormControl,Button} from "react-bootstrap";
 
 class App extends React.PureComponent {
   render() {
@@ -28,8 +27,11 @@ class App extends React.PureComponent {
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav>
-            <NavItem eventKey={1} href="/SelectedProject">
+            <NavItem eventKey={1} href="/ProjectList">
               Projects
+            </NavItem>
+            <NavItem eventKey={1} href="/TeamPortal">
+              Team Portal
             </NavItem>
           </Nav>
           <Nav pullRight>
@@ -47,6 +49,7 @@ class App extends React.PureComponent {
           <div>
             <Switch>
               <Route exact path="/" component={Home} />
+              <Route exact path="/ProjectList" component={ProjectList} />
               <Route exact path='/Profile' component={Profile} />
               <Route exact path='/Email' component={Email} />
               <Route exact path='/SelectedProject' component={SelectedProject} />
