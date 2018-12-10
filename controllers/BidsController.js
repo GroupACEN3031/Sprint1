@@ -20,11 +20,14 @@ exports.list = (req, res) => {
 exports.create = (req, res) => {
     const bid = new Bid(req.body);
     console.log("Big in the request : " + bid);
+    console.log("Bid order " + bid.order);
 
     if (!mongoose.Types.ObjectId.isValid(bid.teamID) || !mongoose.Types.ObjectId.isValid(bid.projectID)) {
         console.log("Invalid IDS");
         res.status(400).send("Invalid IDS");
-    } else {
+    } else if (bid.order <= 0) {
+        res.status(400).send("Order must be greater than 0");
+    }else {
 
         if (bid) {
 
@@ -33,6 +36,7 @@ exports.create = (req, res) => {
                     console.log(err);
                     res.status(400).send("Error.See logs for more details");
                 }
+
                 if (teamFound) {
 
                     Project.findOne({'_id': bid.projectID}, (err, projectFound) => {
