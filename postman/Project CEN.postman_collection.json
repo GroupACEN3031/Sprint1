@@ -495,7 +495,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:90/api/bids/5bff51fdbcec4035144372be",
+							"raw": "http://localhost:90/api/bids/5c0de1e24ae3cf1b480c3d85",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -504,7 +504,7 @@
 							"path": [
 								"api",
 								"bids",
-								"5bff51fdbcec4035144372be"
+								"5c0de1e24ae3cf1b480c3d85"
 							]
 						}
 					},
@@ -522,7 +522,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t  \"projectID\": \"5bf395c91e53214ea0b80615\", \n      \"teamID\" : \"5bfe2be542c48127fc5d5e6f\"\n}"
+							"raw": "{\n\t  \"projectID\": \"5bf395c91e53214ea0b80615\", \n      \"teamID\" : \"5bff676f700139209c52e93e\",\n      \"order\" : 1\n}"
 						},
 						"url": {
 							"raw": "http://localhost:90/api/bids/",
@@ -554,7 +554,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t  \"id\": \"5bff5140bcec4035144372b9\"\n}"
+							"raw": "{\n\t  \"id\": \"5bff51fdbcec4035144372be\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:90/api/bids/",
