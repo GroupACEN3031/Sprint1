@@ -1,7 +1,6 @@
 import React from "react";
 import {Container } from "../../components/Grid";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import {Col,Row,Grid,Navbar,Nav,NavItem,NavDropdown,MenuItem,Button} from "react-bootstrap";
+import {Col,Row,Button} from "react-bootstrap";
 
 
 const SelectedProject = () =>
