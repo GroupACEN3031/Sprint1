@@ -27,7 +27,7 @@ exports.create = (req, res) => {
         res.status(400).send("Invalid IDS");
     } else if (bid.order <= 0) {
         res.status(400).send("Order must be greater than 0");
-    }else {
+    } else {
 
         if (bid) {
 
@@ -116,4 +116,41 @@ exports.getById = (req, res) => {
             res.status(404).send("Project does not exist");
         }
     });
+};
+
+
+exports.update = (req, res) => {
+    const bid = new Bid(req.body);
+
+    if (bid) {
+
+        const newBid = {
+            projectID: bid.projectID,
+            teamID: bid.teamID,
+            order: bid.order
+        };
+
+        if (newBid.order <= 0) {
+            res.status(400).send("Order must be greater than 0");
+        } else {
+            console.log("Bid after update " + JSON.stringify(newBid));
+
+            Bid.findOneAndUpdate({
+                "projectID": bid.projectID,
+                "teamID": bid.teamID
+            }, {$set: newBid}, {new: true}, (err, found) => {
+                if (err) throw(err);
+
+                if (!found) {
+                    res.status(404).send("Bid does not exist");
+
+                } else {
+
+                    res.status(200).send("Bid Updated");
+                }
+
+            });
+        }
+
+    }
 };
