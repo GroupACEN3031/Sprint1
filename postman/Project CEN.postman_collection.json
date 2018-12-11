@@ -571,6 +571,36 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Update Bid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t  \"projectID\": \"5bf395c91e53214ea0b80615\", \n      \"teamID\" : \"5bff676f700139209c52e93e\",\n      \"order\" : 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:90/api/bids/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"bids",
+								""
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"event": [
