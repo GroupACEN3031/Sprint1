@@ -1,0 +1,29 @@
+.projects-nav {
+    height: 8em;
+    background-color: #4c8cb5;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 2.5em;
+    padding-top: 3em;
+    color: Black;
+}
+
+.teamprofile-nav {
+    height: 8em;
+    background-color: #e15a53;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 2.5em;
+    padding-top: 3em;
+    color: Black;
+}
+
+.selfprofile-nav {
+    height: 8em;
+    background-color: #86b872;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 2.5em;
+    padding-top: 3em;
+    color: Black;
+}

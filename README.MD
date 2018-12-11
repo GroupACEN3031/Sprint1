@@ -278,6 +278,7 @@ Any team member can Bid but only one bid is accepted per Team. Teams should coor
            "projectID": "5bf395c91e53214ea0b80615",
            "teamID": "5bfe2be542c48127fc5d5e6f",
            "__v": 0
+           "order" : 1
        }
 
 
@@ -289,8 +290,24 @@ Any team member can Bid but only one bid is accepted per Team. Teams should coor
         
         {
         	"projectID": "5bf395c91e53214ea0b80615", 
-              "teamID" : "5bfe2be542c48127fc5d5e6f"
+              "teamID" : "5bfe2be542c48127fc5d5e6f",
+               "order" : 1
+
         }
+
+
+## Update
+  URL : 
+- POST http://localhost:90/api/bids
+    
+    Example Request : 
+        
+        {
+        	"projectID": "5bf395c91e53214ea0b80615", 
+              "teamID" : "5bfe2be542c48127fc5d5e6f"
+              "order" : 1
+        }
+
 
 
 ## Delete 
