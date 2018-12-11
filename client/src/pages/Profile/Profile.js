@@ -1,16 +1,15 @@
 import React from "react";
 import {Container } from "../../components/Grid";
-import Jumbotron from "../../components/Jumbotron";
 import {Col,Row,Grid,Navbar,Nav,NavItem,NavDropdown,MenuItem} from "react-bootstrap";
 
 const Profile = () =>
+
   <Container fluid>
       <h1>WebApps @ UF Student Team Portal</h1>
       <h3>Profile Page</h3>
       <h3></h3>    
       <Row>
       <Col size="md-10">
-
         <form>
           <label for="firstName" class="col-sm-3 col-form-label">
             First Name:
@@ -42,24 +41,38 @@ const Profile = () =>
             <input type="text" last="password2" />
         </form>
         <form>
-          <label for="photo" class="col-sm-3 col-form-label">
-            Upload Photo:
-          </label>
-            <input type="text" last="photo" />
-        </form>
-        <form>
           <label for="skills" class="col-sm-3 col-form-label">
             Skills:
           </label>
             <input type="text" last="skills" />
         </form>
         <form>
+          <label for="photo" class="col-sm-3 col-form-label">
+            Upload Photo:
+          </label>
+            <input type="file" last="photo" onChange={this.fileSelectedHandler}/>
+        </form>
+        <form>
           <label>
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit" onChange={this.submitProfile}/>
           </label>
         </form>
       </Col>
     </Row>
-  </Container>;
+  </Container>
+
+
+  class App {
+    fileSelectedHandler = event => {
+      console.log(event.target.files[0]);
+    }
+
+    submitProfile = () => {
+      this.setState({
+        
+      })
+    }
+  }
+  ;
 
 export default Profile;
