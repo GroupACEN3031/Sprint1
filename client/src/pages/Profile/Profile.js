@@ -6,16 +6,8 @@ import axios from 'axios'
 export default class Profile extends Component {
 
   state = {
-    editProfile: false,
-    addProfile: false,
+    addProfile: true,
     profileToAdd: {}
-  }
-
-  handleChange = event => {
-    const profileToAdd = this.state.profileToAdd
-    profileToAdd[event.target.name] = event.target.value
-    this.setState({profileToAdd})
-    console.log(this.state)
   }
 
   addProfile = event => {
@@ -25,19 +17,25 @@ export default class Profile extends Component {
     const lastName = this.state.profileToAdd.lastName;
     const email = this.state.profileToAdd.email;
     const password = this.state.profileToAdd.password;
-    const password2 = this.state.profileToAdd.password2;
     const skills = this.state.profileToAdd.skills;
-    const photo = this.state.profileToAdd.photo;
+    const photo = this.state.profileToAdd.photo.replace("\\", "/");
 
-    axios.put(`http://localhost:90/api/users/`, { firstName, lastName, email, password, skills, photo } )
-      .then(res => {
-        this.setState({ profileToAdd: {} })
-      })
+    axios.put(`http://localhost:90/api/users`, { firstName, lastName, email, password, skills, photo } )
+    .then(res => {
+      this.setState({ profileToAdd: {} })
+    })
+  }
+
+  handleChange = event => {
+    const profileToAdd = this.state.profileToAdd;
+    profileToAdd[event.target.name] = event.target.value;
+    this.setState({profileToAdd});
+    console.log(this.state);
   }
 
   render(){
 
-    const {profile, editProfile} = this.state
+    const {profile, addProfile} = this.state
 
     return(
   <Container fluid>
@@ -51,7 +49,7 @@ export default class Profile extends Component {
             First Name
           </Col>
           <Col sm={10}>
-            <FormControl name="firstname" type="firstname" placeholder="Enter First Name" onChange={this.handleChange}/>
+            <FormControl name="firstName" type="firstname" placeholder="Enter First Name" onChange={this.handleChange}/>
           </Col>
         </FormGroup>
         <FormGroup controlId="formLastName">
@@ -59,7 +57,7 @@ export default class Profile extends Component {
             Last Name
           </Col>
           <Col sm={10}>
-            <FormControl name="lastname" type="lastname" placeholder="Enter Last Name" onChange={this.handleChange}/>
+            <FormControl name="lastName" type="lastname" placeholder="Enter Last Name" onChange={this.handleChange}/>
           </Col>
         </FormGroup>
         <FormGroup controlId="formEmail">
@@ -83,7 +81,7 @@ export default class Profile extends Component {
             Re-Enter Password
           </Col>
           <Col sm={10}>
-            <FormControl type="password" placeholder="Re-Enter Password" onChange={this.handleChange}/>
+            <FormControl name="password2" type="password" placeholder="Re-Enter Password" />
           </Col>
         </FormGroup>
         <FormGroup controlId="formSkills">
