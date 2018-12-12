@@ -93,12 +93,12 @@ const Profile = () =>
       const firstName = this.state.profileToAdd.firstName;
       const lastName = this.state.profileToAdd.lastName;
       const email = this.state.profileToAdd.email;
-      const password1 = this.state.profileToAdd.password1;
+      const password = this.state.profileToAdd.password;
       const password2 = this.state.profileToAdd.password2;
       const skills = this.state.profileToAdd.skills;
-      const profilePic = this.state.profileToAdd.profilePic;
+      const photo = this.state.profileToAdd.photo;
 
-      axios.put(`http://localhost:90/api/users`, { firstName, lastName, email, password1, password2, profilePic } )
+      axios.put(`http://localhost:90/api/users`, { firstName, lastName, email, password, photo } )
         .then(res => {
           this.setState({ profileToAdd: {} })
         })
