@@ -6,16 +6,9 @@ import axios from 'axios'
 export default class TeamPortal extends Component {
   
   state = {
-    editGroupProfile: false,
-    addGroupProfile: false,
+    editGroupProfile: true,
+    addGroupProfile: true,
     groupProfileToAdd: {}
-  }
-
-  handleChange = event => {
-    const groupProfileToAdd = this.state.groupProfileToAdd
-    groupProfileToAdd[event.target.name] = event.target.value
-    this.setState({groupProfileToAdd})
-    console.log(this.state)
   }
 
   addGroupProfile = event => {
@@ -26,10 +19,17 @@ export default class TeamPortal extends Component {
     const skills = this.state.groupProfileToAdd.skills;
     const photo = this.state.groupProfileToAdd.photo;
 
-    axios.put(`http://localhost:90/api/projects/`, { name, members, skills, photo } )
+    axios.put(`http://localhost:90/api/teams`, { name, skills, members, photo } )
       .then(res => {
         this.setState({ groupProfileToAdd: {} })
       })
+  }
+
+  handleChange = event => {
+    const groupProfileToAdd = this.state.groupProfileToAdd
+    groupProfileToAdd[event.target.name] = event.target.value
+    this.setState({groupProfileToAdd})
+    console.log(this.state)
   }
 
   render(){
@@ -74,7 +74,7 @@ export default class TeamPortal extends Component {
               </Col>
             </FormGroup>
             <FormGroup controlId="formSubmit">
-              <Button bsStyle="primary" onClick={this.addProfile}>Submit Profile</Button>
+              <Button bsStyle="primary" onClick={this.addGroupProfile}>Submit Profile</Button>
             </FormGroup>          
         </Form>
       </form>
