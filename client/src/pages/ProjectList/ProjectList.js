@@ -57,7 +57,6 @@ export default class ProjectList extends Component {
     const projectToAdd = this.state.projectToAdd;
     projectToAdd[event.target.name] = event.target.value;
     this.setState({projectToAdd});
-    console.log(this.state);
   };
 
   updateBidding = () => {
@@ -137,31 +136,28 @@ export default class ProjectList extends Component {
                 />
                 </Col>
               </FormGroup>
-
-                <FormGroup>
-                    <Col xs={2} componentClass={ControlLabel}>Size</Col>
-                    <Col xs={10}>
-                        <FormControl
-                            componentClass="textarea"
-                            name="size"
-                            placeholder="Size of the project"
-                            onChange={this.handleChange}
-                        />
-                    </Col>
-                </FormGroup>
-
-                <FormGroup>
-                    <Col xs={2} componentClass={ControlLabel}>Team's Expertise</Col>
-                    <Col xs={10}>
-                        <FormControl
-                            componentClass="textarea"
-                            name="team_expertise"
-                            placeholder="Team's expertise"
-                            onChange={this.handleChange}
-                        />
-                    </Col>
-                </FormGroup>
-
+              <FormGroup>
+                <Col xs={2} componentClass={ControlLabel}>Size</Col>
+                <Col xs={10}>
+                <FormControl
+                  type="text"
+                  name="size"
+                  placeholder="Size of the project"
+                  onChange={this.handleChange}
+                />
+                </Col>
+              </FormGroup>
+              <FormGroup>
+                <Col xs={2} componentClass={ControlLabel}>Team's Expertise</Col>
+                <Col xs={10}>
+                <FormControl
+                  type="text"
+                  name="team_expertise"
+                  placeholder="Team's expertise"
+                  onChange={this.handleChange}
+                />
+                </Col>
+              </FormGroup>
             </Form>
             <Row>
               <Col xsOffset={8} xs={4}>

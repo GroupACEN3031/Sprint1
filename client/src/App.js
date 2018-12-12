@@ -58,7 +58,7 @@ class App extends React.PureComponent {
               <Route exact path="/ProjectList" component={ProjectList} />
               <Route exact path='/Profile' component={Profile} />
               <Route exact path='/Email' component={Email} />
-              <Route exact path='/SelectedProject' component={SelectedProject} />
+              <Route exact path='/SelectedProject/:project_id' component={SelectedProject} />
               <Route exact path='/TeamPortal' component={TeamPortal} />
               <Route exact path='/UpdatePage' component={UpdatePage} />
               <Route component={NoMatch}/>
