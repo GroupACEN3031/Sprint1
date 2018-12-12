@@ -40,10 +40,12 @@ export default class ProjectList extends Component {
   addProject = event => {
     event.preventDefault()
 
-    const name = this.state.projectToAdd.name
-    const description = this.state.projectToAdd.description
+    const name = this.state.projectToAdd.name;
+    const description = this.state.projectToAdd.description;
+    const size =  this.state.projectToAdd.size;
+    const team_expertise = this.state.projectToAdd.team_expertise;
 
-    axios.put(`http://localhost:90/api/projects`, { name, description } )
+      axios.put(`http://localhost:90/api/projects`, { name, description , size , team_expertise } )
       .then(res => {
         this.setState({ projectToAdd: {} })
         this.getProjects()
@@ -52,11 +54,11 @@ export default class ProjectList extends Component {
   }
 
   handleChange = event => {
-    const projectToAdd = this.state.projectToAdd
-    projectToAdd[event.target.name] = event.target.value
-    this.setState({projectToAdd})
-    console.log(this.state)
-  }
+    const projectToAdd = this.state.projectToAdd;
+    projectToAdd[event.target.name] = event.target.value;
+    this.setState({projectToAdd});
+    console.log(this.state);
+  };
 
   updateBidding = () => {
     if (this.state.editBidding) {
@@ -135,6 +137,30 @@ export default class ProjectList extends Component {
                 />
                 </Col>
               </FormGroup>
+
+                <FormGroup>
+                    <Col xs={2} componentClass={ControlLabel}>Size</Col>
+                    <Col xs={10}>
+                        <FormControl
+                            componentClass="textarea"
+                            name="size"
+                            placeholder="Size of the project"
+                            onChange={this.handleChange}
+                        />
+                    </Col>
+                </FormGroup>
+
+                <FormGroup>
+                    <Col xs={2} componentClass={ControlLabel}>Team's Expertise</Col>
+                    <Col xs={10}>
+                        <FormControl
+                            componentClass="textarea"
+                            name="team_expertise"
+                            placeholder="Team's expertise"
+                            onChange={this.handleChange}
+                        />
+                    </Col>
+                </FormGroup>
 
             </Form>
             <Row>
