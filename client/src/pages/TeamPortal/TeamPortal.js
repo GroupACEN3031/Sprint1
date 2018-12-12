@@ -46,7 +46,7 @@ export default class TeamPortal extends Component {
               Team Name
             </Col>
             <Col sm={10}>
-              <FormControl name="name" type="name" placeholder="Enter Name of Group" onChange={this.handleChange} required/>
+              <FormControl name="name" type="name" placeholder="Enter Name of Team" onChange={this.handleChange} required/>
             </Col>
           </FormGroup>
           <FormGroup controlId="formGroupMembers">
@@ -54,7 +54,7 @@ export default class TeamPortal extends Component {
               Team Members
             </Col>
             <Col sm={10}>
-              <FormControl name="members" type="name" placeholder="Enter Name/s of Group Member/s" onChange={this.handleChange} required/>
+              <FormControl name="members" type="name" placeholder="Enter Name/s of Team Member/s" onChange={this.handleChange} required/>
             </Col>
           </FormGroup>
           <FormGroup controlId="formSkills">
@@ -62,7 +62,7 @@ export default class TeamPortal extends Component {
               Skills
             </Col>
             <Col sm={10}>
-              <FormControl name="skills" type="enterSkills" placeholder="Enter Skills of Group" onChange={this.handleChange} required/>
+              <FormControl name="skills" type="enterSkills" placeholder="Enter Skills of Team" onChange={this.handleChange} required/>
             </Col>
           </FormGroup>
           <FormGroup controlId="formPhoto">
@@ -70,7 +70,7 @@ export default class TeamPortal extends Component {
                 Profile Picture
               </Col>
               <Col sm={10}>
-                <FormControl name="photo" type="file" placeholder="Enter Group Profile Picture" onChange={this.handleChange}/>
+                <FormControl name="photo" type="file" placeholder="Enter Team Profile Picture" onChange={this.handleChange}/>
               </Col>
             </FormGroup>
             <FormGroup controlId="formSubmit">
