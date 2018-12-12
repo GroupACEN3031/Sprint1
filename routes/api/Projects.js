@@ -18,4 +18,11 @@ router.route('/comments/:id')
     .get(ProjectsController.getCommentsByProjectID);
 
 
+router.route('/files')
+    .put(ProjectsController.addFile)
+    .delete(ProjectsController.deleteFile);
+
+router.route('/files/:id')
+    .get(ProjectsController.getFilesByProjectID);
+
 module.exports = router;
