@@ -1,5 +1,6 @@
 const Project = require("../models").Project;
 const Comment = require("../models").Comment;
+const File = require("../models").File;
 
 exports.list = (req, res) => {
 
@@ -107,6 +108,56 @@ exports.deleteComment = (req, res) => {
         })
     } else {
         res.status(404).send("Comment does not exist");
+    }
+
+};
+
+
+
+exports.addFile = (req, res) => {
+
+    const file = new File(req.body);
+
+    file.save((err) => {
+        if (err) {
+            console.log(err);
+            res.status(400).send("Error");
+        } else {
+            console.log("File Added");
+            res.json(file);
+        }
+    });
+};
+
+
+exports.getFilesByProjectID = (req, res) => {
+
+    const ID = req.params.id;
+    console.log("ID in the request " + ID);
+
+    File.find({'projectID': ID}, (err, found) => {
+        if (err) {
+            console.log(err);
+            res.status(400).send("Error");
+        }
+        if (found) {
+            res.status(200).send(found);
+        } else {
+            res.status(404).send("This project does not have any File");
+        }
+    });
+};
+
+exports.deleteFile = (req, res) => {
+    const file = new File(req.body);
+
+    if (file) {
+        File.remove({'_id': file.id}, (err) => {
+            if (err) throw(err);
+            res.status(200).send("Removed successfully ");
+        })
+    } else {
+        res.status(404).send("File does not exist");
     }
 
 };

@@ -23,7 +23,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t  \"userID\": \"121212\", \n      \"body\": \"Comment example\",\n      \"date\" : \"2008-12-11\",\n      \"projectID\" : \"5c1080b7a7a61a2728d1971d\"\n}"
+									"raw": "{\n\t  \"userID\": \"5bfe26b1b509011b709f6501\", \n      \"body\": \"Comment example\",\n      \"date\" : \"2008-12-11\",\n      \"projectID\" : \"5c1080b7a7a61a2728d1971d\"\n}"
 								},
 								"url": {
 									"raw": "http://localhost:90/api/projects/comments",
@@ -98,6 +98,122 @@
 								}
 							},
 							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Files",
+					"item": [
+						{
+							"name": "Add File",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t  \"userID\": \"5bfe26b1b509011b709f6501\", \n      \"description\": \"File example\",\n      \"url\": \"https://i.imgur.com/giC9qHi.mp4\",\n      \"date\" : \"2008-12-11\",\n      \"projectID\" : \"5c1080b7a7a61a2728d1971d\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:90/api/projects/files",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "90",
+									"path": [
+										"api",
+										"projects",
+										"files"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Files by Project ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:90/api/projects/files/5c1080b7a7a61a2728d1971d",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "90",
+									"path": [
+										"api",
+										"projects",
+										"files",
+										"5c1080b7a7a61a2728d1971d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete File by ID",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": \"5c108ea3b4342669e48029af\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:90/api/projects/files",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "90",
+									"path": [
+										"api",
+										"projects",
+										"files"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "43bc7bec-4b29-4c71-bbb3-97e37bc97a9d",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "8a6b32d4-46d7-4b3d-a8cd-8fbf6d6a5aed",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
 						}
 					],
 					"_postman_isSubFolder": true
@@ -448,7 +564,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t  \"name\": \"Team B\", \n      \"skills\" : \"javascript,java,html,nodejs\",\n      \"members\" : \"member1,member2,member3\"\n}"
+							"raw": "{\n\t  \"name\": \"Team A\", \n      \"skills\" : \"javascript,java,html,nodejs\",\n      \"members\" : \"member1,member2,member3\",\n      \"photo\" : \"https://i.imgur.com/3jXHrWp.mp4\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:90/api/teams/",
@@ -478,7 +594,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t  \"name\": \"Team A\", \n      \"skills\" : \"javascript,java,html,nodejs\",\n      \"members\" : \"member1,member2,member3,member4\"\n}"
+							"raw": "{\n\t  \"name\": \"Team A\", \n      \"skills\" : \"javascript,java,html,nodejs\",\n      \"members\" : \"member1,member2,member3,member4\",\n      \"photo\" : \"https://i.imgur.com/3jXHrWp.mp4\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:90/api/teams/",
@@ -510,7 +626,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id\": \"5bfe2be542c48127fc5d5e6f\"\n}"
+							"raw": "{\n\t\"id\": \"5bff676f700139209c52e93e\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:90/api/teams",

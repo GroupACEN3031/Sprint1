@@ -53,7 +53,8 @@ exports.update = (req, res) => {
         const newTeam = {
             name: requestTeam.name,
             skills: requestTeam.skills,
-            members: requestTeam.members
+            members: requestTeam.members,
+            photo : requestTeam.photo
         };
 
         console.log("Team after update " + JSON.stringify(newTeam));
