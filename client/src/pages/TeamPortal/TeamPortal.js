@@ -38,12 +38,12 @@ export default class TeamPortal extends Component {
 
     return(
     <Container fluid>
-      <PageHeader>Group Profile Page</PageHeader>
+      <PageHeader>Team Profile Page</PageHeader>
       <form>
         <Form horizontal>
           <FormGroup controlId="formGroupName">
             <Col componentClass={ControlLabel} sm={2}>
-              Group Name
+              Team Name
             </Col>
             <Col sm={10}>
               <FormControl name="name" type="name" placeholder="Enter Name of Group" onChange={this.handleChange} required/>
@@ -51,7 +51,7 @@ export default class TeamPortal extends Component {
           </FormGroup>
           <FormGroup controlId="formGroupMembers">
             <Col componentClass={ControlLabel} sm={2}>
-              Group Members
+              Team Members
             </Col>
             <Col sm={10}>
               <FormControl name="members" type="name" placeholder="Enter Name/s of Group Member/s" onChange={this.handleChange} required/>
