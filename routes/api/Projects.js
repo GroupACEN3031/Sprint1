@@ -10,4 +10,12 @@ router.route("/")
 router.route('/:id')
     .get(ProjectsController.getById);
 
+router.route('/comments')
+    .put(ProjectsController.addComment)
+    .delete(ProjectsController.deleteComment);
+
+router.route('/comments/:id')
+    .get(ProjectsController.getCommentsByProjectID);
+
+
 module.exports = router;

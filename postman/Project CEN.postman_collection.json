@@ -9,6 +9,100 @@
 			"name": "Projects",
 			"item": [
 				{
+					"name": "Comments",
+					"item": [
+						{
+							"name": "Add Comment",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t  \"userID\": \"121212\", \n      \"body\": \"Comment example\",\n      \"date\" : \"2008-12-11\",\n      \"projectID\" : \"5c1080b7a7a61a2728d1971d\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:90/api/projects/comments",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "90",
+									"path": [
+										"api",
+										"projects",
+										"comments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Comments by Project ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:90/api/projects/comments/5c1080b7a7a61a2728d1971d",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "90",
+									"path": [
+										"api",
+										"projects",
+										"comments",
+										"5c1080b7a7a61a2728d1971d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Comment",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": \"5c1089e17e06a9292c4766df\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:90/api/projects/comments",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "90",
+									"path": [
+										"api",
+										"projects",
+										"comments"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
 					"name": "Get Projects",
 					"request": {
 						"method": "GET",
@@ -43,7 +137,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:90/api/projects/5bf3959b1e53214ea0b80613",
+							"raw": "http://localhost:90/api/projects/5c1080b7a7a61a2728d1971d",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -52,7 +146,7 @@
 							"path": [
 								"api",
 								"projects",
-								"5bf3959b1e53214ea0b80613"
+								"5c1080b7a7a61a2728d1971d"
 							]
 						}
 					},
