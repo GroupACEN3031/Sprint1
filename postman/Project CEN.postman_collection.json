@@ -564,7 +564,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t  \"name\": \"Team B\", \n      \"skills\" : \"javascript,java,html,nodejs\",\n      \"members\" : \"member1,member2,member3\"\n}"
+							"raw": "{\n\t  \"name\": \"Team A\", \n      \"skills\" : \"javascript,java,html,nodejs\",\n      \"members\" : \"member1,member2,member3\",\n      \"photo\" : \"https://i.imgur.com/3jXHrWp.mp4\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:90/api/teams/",
@@ -594,7 +594,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t  \"name\": \"Team A\", \n      \"skills\" : \"javascript,java,html,nodejs\",\n      \"members\" : \"member1,member2,member3,member4\"\n}"
+							"raw": "{\n\t  \"name\": \"Team A\", \n      \"skills\" : \"javascript,java,html,nodejs\",\n      \"members\" : \"member1,member2,member3,member4\",\n      \"photo\" : \"https://i.imgur.com/3jXHrWp.mp4\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:90/api/teams/",
@@ -626,7 +626,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id\": \"5bfe2be542c48127fc5d5e6f\"\n}"
+							"raw": "{\n\t\"id\": \"5bff676f700139209c52e93e\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:90/api/teams",
