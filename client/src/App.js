@@ -33,6 +33,12 @@ class App extends React.PureComponent {
             <NavItem eventKey={1} href="/TeamPortal">
               Team Portal
             </NavItem>
+            <NavItem eventKey={1} href="/Email">
+              Email
+            </NavItem>
+            <NavItem eventKey={1} href="/SelectedProject">
+              Current Project
+            </NavItem>
           </Nav>
           <Nav pullRight>
             <NavDropdown eventKey={2} title={"Welcome, " + user.username} id="basic-nav-dropdown">
