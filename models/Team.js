@@ -6,6 +6,7 @@ const Team = new Schema({
     name: { type: String, required: true },
     skills: { type: String, required: true },
     members: { type: String, required: true },
+    photo: { type: String, required: true }
 });
 
 
