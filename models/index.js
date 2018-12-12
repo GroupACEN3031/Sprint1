@@ -3,5 +3,6 @@ module.exports = {
   User: require("./User"),
   Team: require("./Team"),
   Bid: require("./Bid"),
-  Feature: require("./Feature")
+  Feature: require("./Feature"),
+  Comment: require("./Comment")
 };
