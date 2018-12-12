@@ -16,8 +16,10 @@
    Example Request : 
         
         {
-        "name": "Project3", 
-        "description": "Project 4 Example"
+        	  "name": "Project3", 
+              "description": "Project Example",
+               "size" : 10,
+               "team_expertise" : "javascript"
         }
 
 ## List
@@ -29,21 +31,11 @@ Example Response :
         
        [
            {
-               "_id": "5bf3959b1e53214ea0b80613",
-               "name": "Project1",
-               "description": "Project 1 Example",
-               "__v": 0
-           },
-           {
-               "_id": "5bf395c21e53214ea0b80614",
-               "name": "Project2",
-               "description": "Project 2 Example",
-               "__v": 0
-           },
-           {
-               "_id": "5bf395c91e53214ea0b80615",
+               "_id": "5c1080b7a7a61a2728d1971d",
                "name": "Project3",
-               "description": "Project 3 Example",
+               "description": "Project Example",
+               "size": 10,
+               "team_expertise": "javascript",
                "__v": 0
            }
        ]
@@ -56,9 +48,11 @@ URL :
 Example Response : 
         
        {
-           "_id": "5bf3959b1e53214ea0b80613",
-           "name": "Project1",
-           "description": "Project 1 Example",
+           "_id": "5c1080b7a7a61a2728d1971d",
+           "name": "Project3",
+           "description": "Project Example",
+           "size": 10,
+           "team_expertise": "javascript",
            "__v": 0
        }
 

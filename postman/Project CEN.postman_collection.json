@@ -70,7 +70,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t  \"name\": \"Project3\", \n      \"description\": \"Project Example\"\n}"
+							"raw": "{\n\t  \"name\": \"Project3\", \n      \"description\": \"Project Example\",\n       \"size\" : 10,\n       \"team_expertise\" : \"javascript\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:90/api/projects",
@@ -101,7 +101,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id\": \"5bfe16841b185a2d80fef5ba\"\n}"
+							"raw": "{\n\t\"id\": \"5c1080aaa7a61a2728d1971c\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:90/api/projects",
