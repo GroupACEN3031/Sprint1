@@ -1,12 +1,47 @@
-import React from "react";
+import React, { Component } from "react";
 import {Container } from "../../components/Grid";
-import {Button,ButtonToolbar,Form,FormGroup,ControlLabel,FormControl,Col,Grid,Navbar,Nav,NavItem,NavDropdown,MenuItem} from "react-bootstrap";
+import {PageHeader,Button,Form,FormGroup,ControlLabel,FormControl,Col} from "react-bootstrap";
 import axios from 'axios'
 
-const Profile = () =>
+export default class Profile extends Component {
 
+  state = {
+    editProfile: false,
+    addProfile: false,
+    profileToAdd: {}
+  }
+
+  handleChange = event => {
+    const profileToAdd = this.state.profileToAdd
+    profileToAdd[event.target.name] = event.target.value
+    this.setState({profileToAdd})
+    console.log(this.state)
+  }
+
+  addProfile = event => {
+    event.preventDefault()
+
+    const firstName = this.state.profileToAdd.firstName;
+    const lastName = this.state.profileToAdd.lastName;
+    const email = this.state.profileToAdd.email;
+    const password = this.state.profileToAdd.password;
+    const password2 = this.state.profileToAdd.password2;
+    const skills = this.state.profileToAdd.skills;
+    const photo = this.state.profileToAdd.photo;
+
+    axios.put(`http://localhost:90/api/users/`, { firstName, lastName, email, password, skills, photo } )
+      .then(res => {
+        this.setState({ profileToAdd: {} })
+      })
+  }
+
+  render(){
+
+    const {profile, editProfile} = this.state
+
+    return(
   <Container fluid>
-    <h2>Profile Creation Page</h2>
+    <PageHeader>Profile Creation Page</PageHeader>
     <h3></h3>    
     <form>
       <h4>Please enter information below:</h4>
@@ -16,7 +51,7 @@ const Profile = () =>
             First Name
           </Col>
           <Col sm={10}>
-            <FormControl type="enterFirstName" placeholder="Enter First Name" />
+            <FormControl name="firstname" type="firstname" placeholder="Enter First Name" onChange={this.handleChange}/>
           </Col>
         </FormGroup>
         <FormGroup controlId="formLastName">
@@ -24,7 +59,7 @@ const Profile = () =>
             Last Name
           </Col>
           <Col sm={10}>
-            <FormControl type="enterLastName" placeholder="Enter Last Name" />
+            <FormControl name="lastname" type="lastname" placeholder="Enter Last Name" onChange={this.handleChange}/>
           </Col>
         </FormGroup>
         <FormGroup controlId="formEmail">
@@ -32,7 +67,7 @@ const Profile = () =>
             Email
           </Col>
           <Col sm={10}>
-            <FormControl type="enterEmail" placeholder="Enter Email" />
+            <FormControl name="email" type="email" placeholder="Enter Email" onChange={this.handleChange}/>
           </Col>
         </FormGroup>
         <FormGroup controlId="formPassword1">
@@ -40,7 +75,7 @@ const Profile = () =>
             Password
           </Col>
           <Col sm={10}>
-            <FormControl type="enterPassword1" placeholder="Enter Password" />
+            <FormControl name="password" type="password" placeholder="Enter Password" onChange={this.handleChange}/>
           </Col>
         </FormGroup>
         <FormGroup controlId="formPassword2">
@@ -48,7 +83,7 @@ const Profile = () =>
             Re-Enter Password
           </Col>
           <Col sm={10}>
-            <FormControl type="enterPassword2" placeholder="Re-Enter Password" />
+            <FormControl type="password" placeholder="Re-Enter Password" onChange={this.handleChange}/>
           </Col>
         </FormGroup>
         <FormGroup controlId="formSkills">
@@ -56,7 +91,7 @@ const Profile = () =>
             Skills
           </Col>
           <Col sm={10}>
-            <FormControl type="enterSkills" placeholder="Enter Skills" />
+            <FormControl name="skills" type="enterSkills" placeholder="Enter Skills" onChange={this.handleChange}/>
           </Col>
         </FormGroup>
         <FormGroup controlId="formPhoto">
@@ -64,45 +99,15 @@ const Profile = () =>
             Profile Picture
           </Col>
           <Col sm={10}>
-            <FormControl type="file" placeholder="Enter Profile Picture" />
+            <FormControl name="photo" type="file" placeholder="Enter Profile Picture" onChange={this.handleChange}/>
           </Col>
         </FormGroup>
         <FormGroup controlId="formSubmit">
-          <ButtonToolbar>
-            <Button bsStyle="primary">Submit Profile</Button>
-          </ButtonToolbar>
+          <Button bsStyle="primary" onClick={this.addProfile}>Submit Profile</Button>
         </FormGroup>
       </Form>
     </form>
   </Container>
-
-  class ProfileCreation {
-
-    state = {
-      firstName: false,
-      lastName: false,
-      email: false,
-      password1: false,
-      password2: false,
-      profilePic: false
-    }
-
-    addProject = event => {
-      event.preventDefault()
-
-      const firstName = this.state.profileToAdd.firstName;
-      const lastName = this.state.profileToAdd.lastName;
-      const email = this.state.profileToAdd.email;
-      const password = this.state.profileToAdd.password;
-      const password2 = this.state.profileToAdd.password2;
-      const skills = this.state.profileToAdd.skills;
-      const photo = this.state.profileToAdd.photo;
-
-      axios.put(`http://localhost:90/api/users`, { firstName, lastName, email, password, photo } )
-        .then(res => {
-          this.setState({ profileToAdd: {} })
-        })
-    }
-  };
-
-export default Profile;
+    )
+  }
+}
