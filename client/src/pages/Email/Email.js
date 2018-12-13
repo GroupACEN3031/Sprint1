@@ -2,7 +2,6 @@ import React, { Component } from "react"
 import axios from 'axios'
 import {
   Col,
-  Row,
   Form,
   FormGroup,
   PageHeader,
@@ -49,6 +48,10 @@ export default class Email extends Component {
     this.setState({emailToSend})
   }
 
+  handleProjectSelect = event => {
+    window.location = "/Email/" + event.target.value
+  }
+
   sendEmail = event => {
     event.preventDefault()
 
@@ -64,28 +67,57 @@ export default class Email extends Component {
   }
 
   render(){
-    const { project_id, project } = this.state
+    const { project_id, project, projects } = this.state
+    let project_details
+
+    if (project_id) {
+      project_details =
+      <div>
+        <FormGroup>
+          <Col componentClass={ControlLabel} sm={2}>
+            Project
+          </Col>
+          <Col sm={10} className="email_form_text">
+            {project.name}
+          </Col>
+        </FormGroup>
+        <FormGroup>
+          <Col componentClass={ControlLabel} sm={2}>
+            Description
+          </Col>
+          <Col sm={10} className="email_form_text">
+            {project.description}
+          </Col>
+        </FormGroup>
+      </div>
+    } else {
+      project_details =
+      <div>
+        <FormGroup>
+          <Col componentClass={ControlLabel} sm={2}>
+            <ControlLabel>Select a Project</ControlLabel>
+          </Col>
+          <Col sm={10}>
+            <FormControl
+            componentClass="select"
+            placeholder="select"
+            onChange={this.handleProjectSelect}
+            >
+              <option key={999} value="select">...</option>
+              {projects.map((x, index) =>
+                <option key={index} value={x._id}>{x.name}</option>
+              )}
+            </FormControl>
+          </Col>
+        </FormGroup>
+      </div>
+    }
 
     return(
       <div>
         <PageHeader>Email Project Details</PageHeader>
         <Form horizontal>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={2}>
-            Project
-            </Col>
-            <Col sm={10} className="email_form_text">
-              {project.name}
-            </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={2}>
-            Description
-            </Col>
-            <Col sm={10} className="email_form_text">
-              {project.description}
-            </Col>
-          </FormGroup>
+          {project_details}
           <FormGroup controlId="sendTo">
             <Col componentClass={ControlLabel} sm={2}>
               Send To
