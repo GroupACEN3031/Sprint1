@@ -840,6 +840,202 @@
 			"name": "Features",
 			"item": [
 				{
+					"name": "Features",
+					"item": [
+						{
+							"name": "Get Features",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:90/api/features/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "90",
+									"path": [
+										"api",
+										"features",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Feature by ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:90/api/features/5bff73c90abd600c943b2f30",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "90",
+									"path": [
+										"api",
+										"features",
+										"5bff73c90abd600c943b2f30"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Features by Project ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:90/api/features/project/5bf3959b1e53214ea0b80613",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "90",
+									"path": [
+										"api",
+										"features",
+										"project",
+										"5bf3959b1e53214ea0b80613"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Feature",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t  \"projectID\": \"5bff6dbb3342ce29601cc093\", \n\t  \"description\" : \"Users should be able to add users\",\n\t  \"title\" : \"Hello World\",\n\t  \"status\" : \"open\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:90/api/features/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "90",
+									"path": [
+										"api",
+										"features",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Feature",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t  \"projectID\": \"5bff6dbb3342ce29601cc093\", \n\t  \"description\" : \"Users should be able to add users\",\n\t  \"title\" : \"Hello World\",\n\t  \"status\" : \"closed\",\n\t  \"id\" : \"5bff73c90abd600c943b2f30\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:90/api/features/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "90",
+									"path": [
+										"api",
+										"features",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Feature",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t  \"id\": \"5bf3959b1e53214ea0b80613\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:90/api/features/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "90",
+									"path": [
+										"api",
+										"features",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "91a5b318-3bc2-4f02-bd52-77a997452aa0",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "fe051ed9-1c93-4417-8f9f-73943e4159af",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
 					"name": "Get Features",
 					"request": {
 						"method": "GET",
@@ -1001,6 +1197,63 @@
 							"path": [
 								"api",
 								"features",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "91a5b318-3bc2-4f02-bd52-77a997452aa0",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "fe051ed9-1c93-4417-8f9f-73943e4159af",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Email",
+			"item": [
+				{
+					"name": "Send Email",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t  \"title\" : \"Question about project 1\",\n\t  \"body\" : \"Dear professor I need help with problem 1\",\n\t  \"to\" : \"yvaldessantana@ufl.edu\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:90/api/emails/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "90",
+							"path": [
+								"api",
+								"emails",
 								""
 							]
 						}
