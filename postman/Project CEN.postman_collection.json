@@ -1242,7 +1242,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t  \"title\" : \"Question about project 1\",\n\t  \"body\" : \"Dear professor I need help with problem 1\",\n\t  \"to\" : \"yvaldessantana@ufl.edu\"\n}"
+							"raw": "{\n\t  \"subject\" : \"Question about project 1\",\n\t  \"body\" : \"Dear professor I need help with problem 1\",\n\t  \"to\" : \"yvaldessantana@ufl.edu\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:90/api/emails/",
