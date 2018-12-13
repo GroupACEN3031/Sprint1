@@ -1,12 +1,12 @@
 import React, { Component } from "react"
 import {
     PageHeader,
+    Panel,
+    PanelGroup,
     ControlLabel,
     Form,
     FormGroup,
     FormControl,
-    ListGroup,
-    ListGroupItem,
     Glyphicon,
     Modal,
     Row,
@@ -22,11 +22,15 @@ export default class ProjectList extends Component {
     editBidding: false,
     addModal: false,
     projectToAdd: {},
+    features: [],
+    bids: [],
     projects: []
   }
 
   componentDidMount() {
     this.getProjects()
+    this.getFeatures()
+    this.getBids()
   }
 
   getProjects = () => {
@@ -34,6 +38,22 @@ export default class ProjectList extends Component {
       .then(res => {
         const projects = res.data
         this.setState({ projects })
+      })
+  }
+
+  getFeatures = () => {
+    axios.get(`http://localhost:90/api/features`)
+      .then(res => {
+        const features = res.data
+        this.setState({ features })
+      })
+  }
+
+  getBids = () => {
+    axios.get(`http://localhost:90/api/bids`)
+      .then(res => {
+        const bids = res.data
+        this.setState({ bids })
       })
   }
 
@@ -50,6 +70,17 @@ export default class ProjectList extends Component {
         this.setState({ projectToAdd: {} })
         this.getProjects()
         this.hideAddModal()
+      })
+  }
+
+  addBid = (project_index, bid) => {
+    const teamID = '5c1129354d0c1178fc89e58d'
+    const projectID = this.state.projects[project_index]._id
+    const order = bid.toString()
+
+    axios.put(`http://localhost:90/api/bids`, { teamID, projectID, order })
+      .then(res => {
+        this.getBids()
       })
   }
 
@@ -75,33 +106,109 @@ export default class ProjectList extends Component {
     this.setState({addModal: false})
   }
 
+  handleBiddingChange = event => {
+    const project_index = parseInt(event.target.id.replace("formControlsSelect", ""), 10)
+    const bid = event.target.value
+    
+    if (bid !== 'selected') {
+      this.addBid(project_index, bid)
+    }
+  }
+
+  handleSelect = activeKey => {
+    this.setState({ activeKey })
+  }
+
   render(){
-    const {projects, editBidding} = this.state
+    const {projects, features, editBidding, bids } = this.state
 
     return(
       <div>
         <PageHeader>Projects</PageHeader>
-        <ListGroup>
-          {projects.map((x, index) =>
-          <ListGroupItem key={index} id={"collapsible-panel-" + index}>
-            <Row>
-              <Col xs={2}>
-                <a href={"/SelectedProject/" + x._id}>{x.name}</a>
-              </Col>
-              <Col xs={8}>
-                {x.description}
-              </Col>
-              <Col xs={2}>
-                Bidding Order:&nbsp;
-                { editBidding ?
-                  <FormControl type="text"/>:
-                  index + 1
-                }
-              </Col>
-            </Row>
-          </ListGroupItem>
+        <PanelGroup
+        accordion
+        activeKey={this.state.activeKey}
+        onSelect={this.handleSelect}
+        id="Project-Panel-Group"
+        >
+        {projects.map((x, index) =>
+          <Panel
+          key={index}
+          eventKey={index}
+          id={"collapsible-panel-" + index}
+          extended={(this.state.activeKey === index).toString()}
+          >
+            <Panel.Heading>
+              <Panel.Title className='col-xs-10' toggle>
+                {this.state.activeKey === index ?
+                    <Glyphicon glyph="chevron-down" />:
+                    <Glyphicon glyph="chevron-right" />
+                }{x.name}
+              </Panel.Title>
+              {editBidding ?
+              <Form inline>
+                <FormGroup controlId={"formControlsSelect" + index}>
+                  <ControlLabel>Bidding</ControlLabel>
+                  <FormControl
+                    componentClass="select"
+                    placeholder="select"
+                    onChange={this.handleBiddingChange}
+                    >
+                    <option value="select">select</option>
+                    {[...Array(projects.length).keys()].map(y =>
+                      <option key={y} value={y+1}>{y+1}</option>
+                    )}
+                  </FormControl>
+                </FormGroup>
+              </Form>
+              :
+              <span className='text-right'>Bid Priority: {bids.filter(
+                obj => { return obj.projectID === x._id }).map((z, index_bid) =>
+                <span key={index_bid}>{z.order}</span>
+                )}
+              </span>
+              }
+            </Panel.Heading>
+            <Panel.Collapse
+              >
+              <Panel.Body>
+                <Row>
+                  <Col xs={9}>
+                    <dl className="row">
+                      <dt className="col-xs-3 text-right">Description</dt>
+                      <dd className="col-xs-9">{x.description}</dd>
+                    </dl>
+                    <dl className="row">
+                      <dt className="col-xs-3 text-right">Features</dt>
+                      <dd className="col-xs-9"><ul>
+                      {features.filter(obj => {return obj.projectID === x._id}).map((x, index) =>
+                        <li key={index}>{x.title}</li>
+                      )}
+                      </ul>
+                      </dd>
+                    </dl>
+                    <dl className="row">
+                      <dt className="col-xs-3 text-right">Team Size</dt>
+                      <dd className="col-xs-9">{x.size}</dd>
+                    </dl>
+                    <dl className="row">
+                      <dt className="col-xs-3 text-right">Expertise Required</dt>
+                      <dd className="col-xs-9">{x.team_expertise}</dd>
+                    </dl>
+                  </Col>
+                  <Col xs={3}>
+                    <Button
+                    bsStyle="primary"
+                    className="pull-right"
+                    href={"/SelectedProject/" + x._id}
+                    >Project Details</Button>
+                  </Col>
+                </Row>
+              </Panel.Body>
+            </Panel.Collapse>
+          </Panel>
           )}
-        </ListGroup>
+        </PanelGroup>
         <Button bsStyle="primary" bsSize="large" onClick={this.showAddModal}>
             <Glyphicon glyph="plus"/> Add Project
         </Button>
