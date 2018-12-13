@@ -33,9 +33,6 @@ export default class TeamPortal extends Component {
   }
 
   render(){
-
-    const {groupProfile, editGroupProfile} = this.state
-
     return(
     <Container fluid>
       <PageHeader>Team Profile Page</PageHeader>

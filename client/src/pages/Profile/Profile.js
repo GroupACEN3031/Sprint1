@@ -35,12 +35,9 @@ export default class Profile extends Component {
 
   render(){
 
-    const {profile, addProfile} = this.state
-
     return(
   <Container fluid>
     <PageHeader>Profile Creation Page</PageHeader>
-    <h3></h3>    
     <form>
       <h4>Please enter information below:</h4>
       <Form horizontal>
