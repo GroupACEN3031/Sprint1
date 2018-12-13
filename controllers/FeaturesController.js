@@ -106,7 +106,7 @@ exports.getByProjectID = (req, res) => {
     const ID = req.params.id;
     console.log("ID in the request " + ID);
 
-    Feature.findOne({'projectID': ID}, (err, found) => {
+    Feature.find({'projectID': ID}, (err, found) => {
         if (err) {
             console.log(err);
             res.status(400).send("Error");
