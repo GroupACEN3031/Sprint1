@@ -5,6 +5,6 @@ module.exports = {
     Bid: require("./Bid"),
     Feature: require("./Feature"),
     Comment: require("./Comment"),
-    File: require("./File")
-
+    File: require("./File"),
+    Email: require("./Email")
 };
