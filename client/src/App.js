@@ -13,7 +13,7 @@ import {Grid,Navbar,Nav,NavItem,NavDropdown,MenuItem,FormControl,Button} from "r
 class App extends React.PureComponent {
   render() {
     const user = {
-      username: 'Test User'
+      username: 'Michael Howerter'
     }
 
     return (
@@ -35,9 +35,6 @@ class App extends React.PureComponent {
             </NavItem>
             <NavItem eventKey={1} href="/Email">
               Email
-            </NavItem>
-            <NavItem eventKey={1} href="/SelectedProject">
-              Current Project
             </NavItem>
           </Nav>
           <Nav pullRight>
