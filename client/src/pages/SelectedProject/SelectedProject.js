@@ -56,7 +56,8 @@ export default class SelectedProject extends Component {
   getFeatures = () => {
     axios.get(`http://localhost:90/api/features/project/` + this.state.project_id)
       .then(res => {
-        const features = [res.data]
+        const features = res.data;
+        console.log(features);
         const progress = (features.filter(obj => {return obj.status === 'closed'}).length/features.length)*100
         this.setState({ features, progress })
       })
