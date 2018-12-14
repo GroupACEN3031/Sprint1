@@ -2,6 +2,7 @@
 1. npm run installDeps
 2. npm run start
     - It should open the browser at http://localhost:3000/ with the initial Application
+    - If you are running OSX/Linux retry with sudo 
     
 
 # REST endpoints : 
