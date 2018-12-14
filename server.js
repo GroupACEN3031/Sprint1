@@ -21,4 +21,4 @@ app.listen(PORT, function() {
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
 
-mongoose.connect("mongodb://yeikel:assigment3@ds227373.mlab.com:27373/assigment3");
+mongoose.connect("mongodb://");
